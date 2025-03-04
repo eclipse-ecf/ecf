@@ -228,7 +228,10 @@ public class ECFPlugin implements BundleActivator {
 		containerManagerServiceRegistration = ctxt.registerService(IContainerManager.class.getName(), sf, null);
 
 		// Register SSLContextFactory
-		ecfSSLContextFactory = new ECFSSLContextFactory(ctxt);
+		String defaultProtocol = System.getProperty("org.eclipse.ecf.core.security.sslcontextfactory.defaultProtocol"); //$NON-NLS-1$
+		String defaultProvider = System.getProperty("org.eclipse.ecf.core.security.sslcontextfactory.defaultProvider"); //$NON-NLS-1$
+
+		ecfSSLContextFactory = new ECFSSLContextFactory(ctxt, defaultProtocol, defaultProvider);
 		sslContextFactoryRegistration = ctxt.registerService(SSLContextFactory.class, ecfSSLContextFactory, null);
 
 		SafeRunner.run(new ExtensionRegistryRunnable(this.context) {
