@@ -85,4 +85,20 @@ https://wiki.eclipse.org/ECF#OSGi_Remote_Services
          id="org.eclipse.ecf.remoteservice.ui"
          version="0.0.0"/>
 
+   <plugin
+         id="org.eclipse.ecf.discovery.ui"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ecf.discovery.ui.edit"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ecf.discovery.ui.model"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ecf.discovery.ui.properties"
+         version="0.0.0"/>
+
 </feature>
