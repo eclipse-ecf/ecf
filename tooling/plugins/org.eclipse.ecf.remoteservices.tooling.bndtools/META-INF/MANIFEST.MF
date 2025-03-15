@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %plugin.name
 Bundle-SymbolicName: org.eclipse.ecf.remoteservices.tooling.bndtools;singleton:=true
-Bundle-Version: 1.4.0.qualifier
+Bundle-Version: 1.4.1.qualifier
 Import-Package: org.eclipse.core.resources,
  org.eclipse.jface.resource,
  org.osgi.service.component.annotations;version="1.3.0";resolution:=optional

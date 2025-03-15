@@ -81,8 +81,6 @@
         <setEntry value="org.eclipse.ecf.provider.dnssd"/>
         <setEntry value="org.eclipse.ecf.provider.filetransfer"/>
         <setEntry value="org.eclipse.ecf.provider.filetransfer.efs"/>
-        <setEntry value="org.eclipse.ecf.provider.filetransfer.httpclient45"/>
-        <setEntry value="org.eclipse.ecf.provider.filetransfer.httpclient45.win32"/>
         <setEntry value="org.eclipse.ecf.provider.filetransfer.httpclient5"/>
         <setEntry value="org.eclipse.ecf.provider.filetransfer.httpclient5.win32"/>
         <setEntry value="org.eclipse.ecf.provider.filetransfer.httpclientjava"/>
@@ -126,7 +124,6 @@
         <setEntry value="org.eclipse.ecf.tests.datashare"/>
         <setEntry value="org.eclipse.ecf.tests.discovery"/>
         <setEntry value="org.eclipse.ecf.tests.filetransfer"/>
-        <setEntry value="org.eclipse.ecf.tests.filetransfer.httpclient45"/>
         <setEntry value="org.eclipse.ecf.tests.filetransfer.httpclient5"/>
         <setEntry value="org.eclipse.ecf.tests.filetransfer.httpclientjava"/>
         <setEntry value="org.eclipse.ecf.tests.filetransfer.jreprovider"/>
