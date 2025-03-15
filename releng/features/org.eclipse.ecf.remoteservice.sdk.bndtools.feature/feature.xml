@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.ecf.remoteservice.sdk.bndtools.feature"
       label="ECF Remote Services SDK for Bndtools"
-      version="3.15.6.qualifier"
+      version="3.15.7.qualifier"
       provider-name="%providerName"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">
