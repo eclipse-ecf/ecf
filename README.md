@@ -14,17 +14,17 @@ To try it out after installing Bndtools 7.1 and the ECF tools add ons
 
 ![bndtoolsnewwkspace](https://github.com/user-attachments/assets/95ec5792-6bc2-4c88-990d-4e8d3350627e)
 
-1. Create a new Bnd OSGi project
+2. Create a new Bnd OSGi project
 
 ![bndtoolsnewproject](https://github.com/user-attachments/assets/fa2641e6-a074-4796-b761-f79999b9ba06)
 
-1. Open the projectName.hellopython.javahost.bndrun file in the project directory
+3. Open the projectName.hellopython.javahost.bndrun file in the project directory
    
 ![bndtoolsbndrun](https://github.com/user-attachments/assets/9bf8a380-9ee7-4e48-ac49-1627cf3ace75)
 
-1. Choose 'Resolve' and then 'Update'
+4. Choose 'Resolve' and then 'Update'
 
-1. Select Debug OSGi to start the example application (Java)
+5. Select Debug OSGi to start the example application (Java)
 
 ![bndtoolsdebug](https://github.com/user-attachments/assets/9fa2536f-9748-4f5f-94bc-b78374f436a8)
 
@@ -32,7 +32,7 @@ Running Python Example Program
 
 1. Install [iPOPO v 3.1.0](https://ipopo.readthedocs.io) in your Python (3.9 or greater) local environment
 
-1. In a command shell or IDE, navigate to the project directory and run the run_python_example.py script
+2. In a command shell or IDE, navigate to the project directory and run the run_python_example.py script
 
 ```
 python run_python_example.py
