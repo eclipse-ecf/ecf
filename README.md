@@ -7,17 +7,15 @@ Release Date: 1/20/2025
 ### Install into Bndtools for Remote Services development
 NEW: Feature for Remote Services tooling that enhances [Bndtools](https://bndtools.org/) 7.1 or higher.  Theses tools use bndtools project, workspace, service templates, and OSGi services wizards for simplifying the creation of OSGi remote services.  Also present are Eclipse view for debugging remote service endpoint description discovery and remote service export/import.  The feature requires that Bndtools 7.1+ be [installed](https://bndtools.org/installation.html) into a recent version of Eclipse.  Also see the Install into Bndtools 7.1 via Oomph section below for automated install.
 
-<b>Name</b>:  ECF 3.15.5
+<b>Name</b>:  ECF 3.15.7
 
 <b>Update Site URL</b>:  [https://download.eclipse.org/rt/ecf/latest/site.p2](https://download.eclipse.org/rt/ecf/latest/site.p2)
 
-Update Site as Zip:  [org.eclipse.ecf.sdk_3.15.5.v20250124-1843.zip](https://www.eclipse.org/downloads/download.php?file=/rt/ecf/3.15.5/org.eclipse.ecf.sdk_3.15.5.v20250124-1843.zip)
-
-[Javadocs](https://download.eclipse.org/rt/ecf/snapshot/javadoc/)
+[Javadocs](https://download.eclipse.org/rt/ecf/latest/javadoc/)
 
 ### Install into [Bndtools 7.1](https://bndtools.org/) via Oomph
 
-There are now [Oomph](https://projects.eclipse.org/projects/tools.oomph) Setups that will automatically install and configure Eclipse, Bndtools 7.1 and ECF 3.15.5 [see here](https://github.com/bndtools/bndtools.p2.repo/tree/master/setup/ecf)
+There are now [Oomph](https://projects.eclipse.org/projects/tools.oomph) Setups that will automatically install and configure Eclipse, Bndtools 7.1 and ECF 3.15.7 [see here](https://github.com/bndtools/bndtools.p2.repo/tree/master/setup/ecf)
 
 ### Features for Bndtools-based [OSGi Remote Services](https://docs.osgi.org/specification/osgi.cmpn/7.0.0/service.remoteservices.html) Development
 
