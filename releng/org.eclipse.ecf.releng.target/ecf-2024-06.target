@@ -30,7 +30,6 @@
       <unit id="org.apache.batik.css" version="0.0.0"/>
       <unit id="org.apache.commons.commons-logging" version="0.0.0"/>
       <unit id="org.apache.commons.httpclient" version="0.0.0"/>
-      <unit id="org.apache.commons.jxpath" version="0.0.0"/>
       <unit id="org.apache.felix.gogo.runtime" version="0.0.0"/>
       <unit id="org.apache.httpcomponents.client5.httpclient5" version="0.0.0"/>
       <unit id="org.apache.httpcomponents.client5.httpclient5-win" version="0.0.0"/>
