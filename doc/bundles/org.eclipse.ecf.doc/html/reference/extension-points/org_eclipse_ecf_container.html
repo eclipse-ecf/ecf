@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>container</title>
+<style type="text/css">@import url("../../../../org.eclipse.platform.doc.isv/book.css");</style>
+<style type="text/css">@import url("../../../../org.eclipse.platform.doc.isv/schema.css");</style>
+</HEAD>
+<BODY>
+<H1 style="text-align:center">container</H1>
+<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Identifier: </h6>org.eclipse.ecf.container<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Since: </h6>ECF core bundle v 3.1.0.
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Description: </h6>This extension point allows extensions to specify the creation of a container instance of a given type.<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Configuration Markup:</h6>
+<p></p>
+<p class="code SchemaDtd">&lt;!ELEMENT <a name="e.extension">extension</a> (<a href="#e.container">container</a>+)&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST extension</p>
+<p class="code SchemaDtdAttlist">point&nbsp;CDATA #REQUIRED</p>
+<p class="code SchemaDtdAttlist">id&nbsp;&nbsp;&nbsp;&nbsp;CDATA #IMPLIED</p>
+<p class="code SchemaDtdAttlist">name&nbsp;&nbsp;CDATA #IMPLIED&gt;</p>
+<p></p>
+<ul class="ConfigMarkupAttlistDesc">
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.container">container</a> (<a href="#e.parameter">parameter</a>+)?&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST container</p>
+<p class="code SchemaDtdAttlist">factoryName&nbsp;CDATA #REQUIRED</p>
+<p class="code SchemaDtdAttlist">containerId&nbsp;CDATA #IMPLIED&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+The container extension point.  Extensions may define new containers created upon ECF core initialization.</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>factoryName</b> - The required containerFactoryName (e.g. ecf.generic.client or ecf.r_osgi.peer) that defines the type of container to create.</li>
+<li><b>containerId</b> - Optional containerId that defines the id for the new container instance.</li>
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.parameter">parameter</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST parameter</p>
+<p class="code SchemaDtdAttlist">name&nbsp;&nbsp;CDATA #REQUIRED</p>
+<p class="code SchemaDtdAttlist">value&nbsp;CDATA #REQUIRED&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+Parameter for container instance creation.  The name value pairs defined by the parameter element name and value attributes are added to a Map that is then passed to the container factory instance creation.</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>name</b> - The name for the container parameter.</li>
+<li><b>value</b> - The value for the container parameter.</li>
+</ul>
+<br><h6 class="CaptionFigColumn SchemaHeader">Examples: </h6><pre class="Example"><span class="code SchemaTag">
+   &lt;extension
+         point=</span><span class="code SchemaCstring">&quot;org.eclipse.ecf.container&quot;</span><span class="code SchemaTag">&gt;
+      &lt;container
+            containerId=</span><span class="code SchemaCstring">&quot;foo1&quot;</span><span class="code SchemaTag">
+            factoryName=</span><span class="code SchemaCstring">&quot;ecf.generic.client&quot;</span><span class="code SchemaTag">&gt;
+         &lt;parameter
+               name=</span><span class="code SchemaCstring">&quot;name1&quot;</span><span class="code SchemaTag">
+               value=</span><span class="code SchemaCstring">&quot;value1&quot;</span><span class="code SchemaTag">&gt;
+         &lt;/parameter&gt;
+         &lt;parameter
+               name=</span><span class="code SchemaCstring">&quot;name2&quot;</span><span class="code SchemaTag">
+               value=</span><span class="code SchemaCstring">&quot;value2&quot;</span><span class="code SchemaTag">&gt;
+         &lt;/parameter&gt;
+      &lt;/container&gt;
+      &lt;container
+            containerId=</span><span class="code SchemaCstring">&quot;adfasdf&quot;</span><span class="code SchemaTag">
+            factoryName=</span><span class="code SchemaCstring">&quot;bogus.factory.name&quot;</span><span class="code SchemaTag">&gt;
+      &lt;/container&gt;
+      &lt;container
+            containerId=</span><span class="code SchemaCstring">&quot;ecftcp://localhost:32111/server&quot;</span><span class="code SchemaTag">
+            factoryName=</span><span class="code SchemaCstring">&quot;ecf.generic.server&quot;</span><span class="code SchemaTag">&gt;
+      &lt;/container&gt;
+      &lt;container
+            factoryName=</span><span class="code SchemaCstring">&quot;ecf.generic.client&quot;</span><span class="code SchemaTag">&gt;
+      &lt;/container&gt;
+   &lt;/extension&gt;
+</span></pre>
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">API Information: </h6>No API available.
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Supplied Implementation: </h6>The ECF core v3.1.0 bundle supplies the implementation of this extension point.
+<p></p>
+
+<br>
+<p class="note SchemaCopyright">
+Copyright (c) 2009 Composent, Inc. and others.
+
+This program and the accompanying materials are made
+available under the terms of the Eclipse Public License 2.0
+which is available at https://www.eclipse.org/legal/epl-2.0/
+
+SPDX-License-Identifier: EPL-2.0
+
+</p>
+</BODY>
+</HTML>

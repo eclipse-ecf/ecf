@@ -1,0 +1,21 @@
+#This is a generated file; do not edit.
+#Thu May 08 15:32:46 PDT 2025
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_container.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_containerFactory.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_filetransfer_urlStreamHandlerService.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_identity_namespace.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_presence_bot_chatRoomMessageHandler.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_presence_bot_chatRoomRobot.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_presence_bot_imMessageHandler.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_presence_bot_imRobot.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_presence_ui_rosterViewerDropTarget.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_provider_filetransfer_browseFileTransferProtocolFactory.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_provider_filetransfer_retrieveFileTransferProtocolFactory.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_provider_filetransfer_sendFileTransferProtocolFactory.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_remoteservice_ui_servicesview.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_server_generic_configuration.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_sharedobject_sharedObjectFactory.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_start.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_ui_configurationWizards.html=0
+/org.eclipse.ecf.doc/html/reference/extension-points/org_eclipse_ecf_ui_connectWizards.html=0
+/org.eclipse.ecf.doc/notices.html=0

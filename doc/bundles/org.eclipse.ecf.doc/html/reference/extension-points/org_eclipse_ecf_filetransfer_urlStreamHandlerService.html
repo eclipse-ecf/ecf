@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>URL Stream Handler Service</title>
+<style type="text/css">@import url("../../../../org.eclipse.platform.doc.isv/book.css");</style>
+<style type="text/css">@import url("../../../../org.eclipse.platform.doc.isv/schema.css");</style>
+</HEAD>
+<BODY>
+<H1 style="text-align:center">URL Stream Handler Service</H1>
+<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Identifier: </h6>org.eclipse.ecf.filetransfer.urlStreamHandlerService<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Since: </h6>1.0.0.M5
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Description: </h6>This extension point allows plugins to define an URLStreamHandlerService associated with an URL protocol. 
+
+So, for example, if a plugin wants to setup a new URL protocol 'foobar', it can declare the following:
+
+<pre class="Example"><span class="code SchemaTag">
+   &lt;extension
+         point=</span><span class="code SchemaCstring">&quot;org.eclipse.ecf.filetransfer.urlStreamHandlerService&quot;</span><span class="code SchemaTag">&gt;
+      &lt;urlStreamHandlerService
+            protocol=</span><span class="code SchemaCstring">&quot;foobar&quot;</span><span class="code SchemaTag">
+            serviceClass=</span><span class="code SchemaCstring">&quot;org.eclipse.ecf.tests.filetransfer.TestURLStreamHandlerService&quot;</span><span class="code SchemaTag">&gt;
+      &lt;/urlStreamHandlerService&gt;
+   &lt;/extension&gt;
+</span></pre>
+
+When an URL with protocol 'foobar' is created:
+
+<pre class="Example"><span class="code SchemaTag">
+// Create URL with &apos;foobar&apos; protocol
+URL url = new URL("foobar://myurlcontents/can/be?whatever=we&amp;want=.");
+// Open connection to resource defined by URL
+URLConnection connection = url.openConnection();
+</span></pre>
+
+When the URL is created the <b>serviceClass</b> <code>TestURLStreamHandlerService</code> will be called to parse the URL, and when the URL.openConnection() method is called on this URL, the <b>serviceClass</b> <code>TestURLStreamHandlerService.openConnection(URL u)</code> method will be called, allowing the registered <b>serviceClass</b> to create, connect, and return an URLConnection instance using any appropriate protocol.
+
+Here's an example implementation for <code>TestURLStreamHandlerService</code>:
+
+<pre class="Example"><span class="code SchemaTag">
+public class TestURLStreamHandlerService extends
+  AbstractURLStreamHandlerService {
+
+ }
+ /* (non-Javadoc)
+  * @see org.osgi.service.url.AbstractURLStreamHandlerService#openConnection(java.net.URL)
+  */
+ public URLConnection openConnection(URL u) throws IOException {
+  return new TestHttpURLConnection(u);
+ }
+
+}
+</span></pre>
+
+Note that the class <code>org.eclipse.ecf.tests.filetransfer.TestURLStreamHandlerService</code> must extend the <code>org.osgi.service.url.AbstractURLStreamHandlerService</code> abstract service class.<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Configuration Markup:</h6>
+<p></p>
+<p class="code SchemaDtd">&lt;!ELEMENT <a name="e.extension">extension</a> (<a href="#e.urlStreamHandlerService">urlStreamHandlerService</a>)+&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST extension</p>
+<p class="code SchemaDtdAttlist">point&nbsp;CDATA #REQUIRED</p>
+<p class="code SchemaDtdAttlist">id&nbsp;&nbsp;&nbsp;&nbsp;CDATA #IMPLIED</p>
+<p class="code SchemaDtdAttlist">name&nbsp;&nbsp;CDATA #IMPLIED&gt;</p>
+<p></p>
+<ul class="ConfigMarkupAttlistDesc">
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.urlStreamHandlerService">urlStreamHandlerService</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST urlStreamHandlerService</p>
+<p class="code SchemaDtdAttlist">protocol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDATA #REQUIRED</p>
+<p class="code SchemaDtdAttlist">serviceClass&nbsp;CDATA #REQUIRED&gt;</p>
+<p></p>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>protocol</b> - protocol name for use in URL instance creation.</li>
+<li><b>serviceClass</b> - Implementation class.  Must extend <code>org.osgi.service.url.AbstractURLStreamHandlerService</code>.</li>
+</ul>
+<br><h6 class="CaptionFigColumn SchemaHeader">Examples: </h6>Here is an example declaration of a serviceClass associated with an URL protocol:
+
+<pre class="Example"><span class="code SchemaTag">
+   &lt;extension
+         point=</span><span class="code SchemaCstring">&quot;org.eclipse.ecf.filetransfer.urlStreamHandlerService&quot;</span><span class="code SchemaTag">&gt;
+      &lt;urlStreamHandlerService
+            protocol=</span><span class="code SchemaCstring">&quot;foobar&quot;</span><span class="code SchemaTag">
+            serviceClass=</span><span class="code SchemaCstring">&quot;org.eclipse.ecf.tests.filetransfer.TestURLStreamHandlerService&quot;</span><span class="code SchemaTag">&gt;
+      &lt;/urlStreamHandlerService&gt;
+   &lt;/extension&gt;
+</span></pre>
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">API Information: </h6>Here is the API for the serviceClass:
+
+<pre class="Example"><span class="code SchemaTag">
+/**
+ * Abstract implementation of the &lt;code&gt;URLStreamHandlerService&lt;/code&gt; interface.
+ * All the methods simply invoke the corresponding methods on
+ * &lt;code&gt;java.net.URLStreamHandler&lt;/code&gt; except for &lt;code&gt;parseURL&lt;/code&gt; and
+ * &lt;code&gt;setURL&lt;/code&gt;, which use the &lt;code&gt;URLStreamHandlerSetter&lt;/code&gt;
+ * parameter. Subclasses of this abstract class should not need to override the
+ * &lt;code&gt;setURL&lt;/code&gt; and &lt;code&gt;parseURL(URLStreamHandlerSetter,...)&lt;/code&gt;
+ * methods.
+ * 
+ * @version $Revision: 1.2 $
+ */
+public abstract class AbstractURLStreamHandlerService extends URLStreamHandler
+  implements URLStreamHandlerService {
+ /**
+  * @see "java.net.URLStreamHandler.openConnection"
+  */
+ public abstract URLConnection openConnection(URL u)
+   throws java.io.IOException;
+
+ /**
+  * The &lt;code&gt;URLStreamHandlerSetter&lt;/code&gt; object passed to the parseURL
+  * method.
+  */
+ protected URLStreamHandlerSetter realHandler;
+
+ /**
+  * Parse a URL using the &lt;code&gt;URLStreamHandlerSetter&lt;/code&gt; object. This
+  * method sets the &lt;code&gt;realHandler&lt;/code&gt; field with the specified
+  * &lt;code&gt;URLStreamHandlerSetter&lt;/code&gt; object and then calls
+  * &lt;code&gt;parseURL(URL,String,int,int)&lt;/code&gt;.
+  * 
+  * @param realHandler The object on which the &lt;code&gt;setURL&lt;/code&gt; method must
+  *        be invoked for the specified URL.
+  * @see "java.net.URLStreamHandler.parseURL"
+  */
+ public void parseURL(URLStreamHandlerSetter realHandler, URL u,
+   String spec, int start, int limit) {
+  this.realHandler = realHandler;
+  parseURL(u, spec, start, limit);
+ }
+
+ /**
+  * This method calls &lt;code&gt;super.toExternalForm&lt;/code&gt;.
+  * 
+  * @see "java.net.URLStreamHandler.toExternalForm"
+  */
+ public String toExternalForm(URL u) {
+  return super.toExternalForm(u);
+ }
+
+ /**
+  * This method calls &lt;code&gt;super.equals(URL,URL)&lt;/code&gt;.
+  * 
+  * @see "java.net.URLStreamHandler.equals(URL,URL)"
+  */
+ public boolean equals(URL u1, URL u2) {
+  return super.equals(u1, u2);
+ }
+
+ /**
+  * This method calls &lt;code&gt;super.getDefaultPort&lt;/code&gt;.
+  * 
+  * @see "java.net.URLStreamHandler.getDefaultPort"
+  */
+ public int getDefaultPort() {
+  return super.getDefaultPort();
+ }
+
+ /**
+  * This method calls &lt;code&gt;super.getHostAddress&lt;/code&gt;.
+  * 
+  * @see "java.net.URLStreamHandler.getHostAddress"
+  */
+ public InetAddress getHostAddress(URL u) {
+  return super.getHostAddress(u);
+ }
+
+ /**
+  * This method calls &lt;code&gt;super.hashCode(URL)&lt;/code&gt;.
+  * 
+  * @see "java.net.URLStreamHandler.hashCode(URL)"
+  */
+ public int hashCode(URL u) {
+  return super.hashCode(u);
+ }
+
+ /**
+  * This method calls &lt;code&gt;super.hostsEqual&lt;/code&gt;.
+  * 
+  * @see "java.net.URLStreamHandler.hostsEqual"
+  */
+ public boolean hostsEqual(URL u1, URL u2) {
+  return super.hostsEqual(u1, u2);
+ }
+
+ /**
+  * This method calls &lt;code&gt;super.sameFile&lt;/code&gt;.
+  * 
+  * @see "java.net.URLStreamHandler.sameFile"
+  */
+ public boolean sameFile(URL u1, URL u2) {
+  return super.sameFile(u1, u2);
+ }
+
+ /**
+  * This method calls
+  * &lt;code&gt;realHandler.setURL(URL,String,String,int,String,String)&lt;/code&gt;.
+  * 
+  * @see "java.net.URLStreamHandler.setURL(URL,String,String,int,String,String)"
+  * @deprecated This method is only for compatibility with handlers written
+  *             for JDK 1.1.
+  */
+ protected void setURL(URL u, String proto, String host, int port,
+   String file, String ref) {
+  realHandler.setURL(u, proto, host, port, file, ref);
+ }
+
+ /**
+  * This method calls
+  * &lt;code&gt;realHandler.setURL(URL,String,String,int,String,String,String,String)&lt;/code&gt;.
+  * 
+  * @see "java.net.URLStreamHandler.setURL(URL,String,String,int,String,String,String,String)"
+  */
+ protected void setURL(URL u, String proto, String host, int port,
+   String auth, String user, String path, String query, String ref) {
+  realHandler.setURL(u, proto, host, port, auth, user, path, query, ref);
+ }
+}
+
+</span></pre>
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Supplied Implementation: </h6>No supplied implementation.
+<p></p>
+
+<br>
+<p class="note SchemaCopyright">
+Copyright (c) 2004 Composent, Inc. and others.
+
+This program and the accompanying materials are made
+available under the terms of the Eclipse Public License 2.0
+which is available at https://www.eclipse.org/legal/epl-2.0/
+
+SPDX-License-Identifier: EPL-2.0
+
+</p>
+</BODY>
+</HTML>

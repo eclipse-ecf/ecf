@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Roster Viewer Drop Target</title>
+<style type="text/css">@import url("../../../../org.eclipse.platform.doc.isv/book.css");</style>
+<style type="text/css">@import url("../../../../org.eclipse.platform.doc.isv/schema.css");</style>
+</HEAD>
+<BODY>
+<H1 style="text-align:center">Roster Viewer Drop Target</H1>
+<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Identifier: </h6>org.eclipse.ecf.presence.ui.rosterViewerDropTarget<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Since: </h6>1.0.0
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Description: </h6>This extension point allows drop targets to be specified for the MultiRosterView.<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Configuration Markup:</h6>
+<p></p>
+<p class="code SchemaDtd">&lt;!ELEMENT <a name="e.extension">extension</a> (<a href="#e.dropTarget">dropTarget</a>+)&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST extension</p>
+<p class="code SchemaDtdAttlist">point&nbsp;CDATA #REQUIRED</p>
+<p class="code SchemaDtdAttlist">id&nbsp;&nbsp;&nbsp;&nbsp;CDATA #IMPLIED</p>
+<p class="code SchemaDtdAttlist">name&nbsp;&nbsp;CDATA #IMPLIED&gt;</p>
+<p></p>
+<ul class="ConfigMarkupAttlistDesc">
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.dropTarget">dropTarget</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST dropTarget</p>
+<p class="code SchemaDtdAttlist">class&nbsp;CDATA #REQUIRED&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+Drop target element.</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>class</b> - Class for roster viewer drop target.  Must implement <b>org.eclipse.ecf.presence.ui.dnd.IRosterViewerDropTarget</b>.  Required.</li>
+</ul>
+<br><h6 class="CaptionFigColumn SchemaHeader">Examples: </h6><pre class="Example"><span class="code SchemaTag">
+   &lt;extension
+         point=</span><span class="code SchemaCstring">&quot;org.eclipse.ecf.presence.ui.rosterViewerDropTarget&quot;</span><span class="code SchemaTag">&gt;
+      &lt;dropTarget
+            class=</span><span class="code SchemaCstring">&quot;org.eclipse.ecf.presence.collab.ui.TextRosterViewerDropTarget&quot;</span><span class="code SchemaTag">&gt;
+      &lt;/dropTarget&gt;
+   &lt;/extension&gt;
+
+</span></pre>
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">API Information: </h6><pre class="Example"><span class="code SchemaTag">
+/**
+ * Roster viewer drop target.  This interface defines the 
+ * required methods for implementers of the rosterViewerDropTarget
+ * extension point.
+ */
+public interface IRosterViewerDropTarget {
+
+    /**
+     * Validates dropping on the given roster item. This method is called whenever some 
+     * aspect of the drop operation changes.
+     * 
+     * @param target the object that the mouse is currently hovering over, or
+     *   &lt;code&gt;null&lt;/code&gt; if the mouse is hovering over empty space
+     * @param operation the current drag operation (copy, move, etc.)
+     * @param transferType the current transfer type
+     * @return &lt;code&gt;true&lt;/code&gt; if the drop is valid, and &lt;code&gt;false&lt;/code&gt;
+     *   otherwise
+     */
+ public boolean validateDrop(IRosterItem rosterItem, int operation,
+            TransferData transferType);
+
+    /**
+     * Performs any work associated with the drop.
+     *
+     * @param data the drop data
+     * @return &lt;code&gt;true&lt;/code&gt; if the drop was successful, and 
+     *   &lt;code&gt;false&lt;/code&gt; otherwise
+     */
+
+ public boolean performDrop(Object data);
+}
+
+</span></pre>
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Supplied Implementation: </h6>No supplied implementation.
+<p></p>
+
+<br>
+<p class="note SchemaCopyright">
+Copyright (c) 2004 Composent, Inc. and others.
+
+This program and the accompanying materials are made
+available under the terms of the Eclipse Public License 2.0
+which is available at https://www.eclipse.org/legal/epl-2.0/
+
+SPDX-License-Identifier: EPL-2.0
+
+</p>
+</BODY>
+</HTML>
