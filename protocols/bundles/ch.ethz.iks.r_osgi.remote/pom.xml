@@ -8,8 +8,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <relativePath>../../../</relativePath>
   </parent>
-  <groupId>org.eclipse.ecf</groupId>
   <artifactId>ch.ethz.iks.r_osgi.remote</artifactId>
-  <version>1.3.0-SNAPSHOT</version>
+  <version>1.3.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 </project>
