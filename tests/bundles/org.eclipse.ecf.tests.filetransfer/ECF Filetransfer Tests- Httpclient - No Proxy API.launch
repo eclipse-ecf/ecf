@@ -50,7 +50,6 @@
         <setEntry value="org.apache.commons.codec@default:default"/>
         <setEntry value="org.apache.commons.httpclient@default:default"/>
         <setEntry value="org.apache.commons.io"/>
-        <setEntry value="org.apache.commons.jxpath"/>
         <setEntry value="org.apache.commons.logging@default:default"/>
         <setEntry value="org.apache.felix.scr"/>
         <setEntry value="org.apache.httpcomponents.client5.httpclient5"/>
