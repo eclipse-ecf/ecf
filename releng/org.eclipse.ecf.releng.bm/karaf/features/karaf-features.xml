@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.2.0"
-	name="ecf-remoteservices-sdk-3.15.7">
-	<feature name="ecf-rs-dependencies-supplement" version="3.15.7" description="ECF 3.15.7 RemoteServices External Dependencies Supplemental. https://wiki.eclipse.org/ECF#OSGi_Remote_Services">
+	name="ecf-remoteservices-sdk-3.15.8">
+	<feature name="ecf-rs-dependencies-supplement" version="3.15.8" description="ECF 3.15.8 RemoteServices External Dependencies Supplemental. https://wiki.eclipse.org/ECF#OSGi_Remote_Services">
 		<bundle>mvn:org.eclipse.platform/org.eclipse.equinox.supplement/1.7.0</bundle>
 	</feature>		
 
-	<feature name="ecf-rs-dependencies" version="3.15.7"
-		description="ECF 3.15.7 RemoteServices External Dependencies. https://wiki.eclipse.org/ECF#OSGi_Remote_Services">
-		<feature version="3.15.7">ecf-rs-dependencies-supplement</feature>
+	<feature name="ecf-rs-dependencies" version="3.15.8"
+		description="ECF 3.15.8 RemoteServices External Dependencies. https://wiki.eclipse.org/ECF#OSGi_Remote_Services">
+		<feature version="3.15.8">ecf-rs-dependencies-supplement</feature>
 		<bundle>
 			mvn:org.eclipse.platform/org.eclipse.equinox.common/3.9.0
 		</bundle>
@@ -21,9 +21,9 @@
 		<feature>eventadmin</feature>
 	</feature>
 	
-	<feature name="ecf-rs-core" version="3.15.7"
+	<feature name="ecf-rs-core" version="3.15.8"
 		description="ECF Core">
-		<feature version="3.15.7">ecf-rs-dependencies</feature>
+		<feature version="3.15.8">ecf-rs-dependencies</feature>
 		<bundle> mvn:org.eclipse.ecf/org.eclipse.ecf.identity</bundle>
 		<bundle> mvn:org.eclipse.ecf/org.eclipse.ecf</bundle>
 		<bundle>
@@ -39,16 +39,16 @@
 			mvn:org.eclipse.ecf/org.eclipse.ecf.remoteservice
 		</bundle>
 	</feature>
-	<feature name="ecf-rs-console" version="3.15.7"
+	<feature name="ecf-rs-console" version="3.15.8"
 		description="ECF Console">
 		<bundle> mvn:org.eclipse.ecf/org.eclipse.ecf.console</bundle>
 		<bundle>
 			mvn:org.eclipse.ecf/org.eclipse.ecf.osgi.services.remoteserviceadmin.console
 		</bundle>
 	</feature>
-	<feature name="ecf-rs-rsa-impl" version="3.15.7"
+	<feature name="ecf-rs-rsa-impl" version="3.15.8"
 		description="ECF RemoteServices OSGi R7 Remote Service Admin (RSA) Impl. See https://wiki.eclipse.org/Remote_Services_Admin">
-		<feature version="3.15.7">ecf-rs-core</feature>
+		<feature version="3.15.8">ecf-rs-core</feature>
 		<bundle>
 			mvn:org.eclipse.ecf/org.eclipse.osgi.services.remoteserviceadmin
 		</bundle>
@@ -59,28 +59,28 @@
 			mvn:org.eclipse.ecf/org.eclipse.ecf.osgi.services.remoteserviceadmin
 		</bundle>
 	</feature>
-	<feature name="ecf-rs-rsa-topology-manager" version="3.15.7"
+	<feature name="ecf-rs-rsa-topology-manager" version="3.15.8"
 		description="ECF RemoteServices OSGi R7 Default Topology Manager (promiscuous). See https://wiki.eclipse.org/Remote_Services_Admin">
 		<bundle>
 			mvn:org.eclipse.ecf/org.eclipse.ecf.osgi.services.distribution
 		</bundle>
 	</feature>
-	<feature name="ecf-rs-rsa" version="3.15.7"
-		description="ECF 3.15.7 Remote Service Admin">
-		<feature version="3.15.7">ecf-rs-rsa-impl</feature>
-		<feature version="3.15.7">ecf-rs-rsa-topology-manager</feature>
+	<feature name="ecf-rs-rsa" version="3.15.8"
+		description="ECF 3.15.8 Remote Service Admin">
+		<feature version="3.15.8">ecf-rs-rsa-impl</feature>
+		<feature version="3.15.8">ecf-rs-rsa-topology-manager</feature>
 	</feature>
-	<feature name="ecf-rs-distribution-generic" version="3.15.7"
+	<feature name="ecf-rs-distribution-generic" version="3.15.8"
 		description="ECF RemoteServices Generic Distribution Provider. https://wiki.eclipse.org/EIG:Configuration_Properties">
-		<feature version="3.15.7">ecf-rs-rsa</feature>
+		<feature version="3.15.8">ecf-rs-rsa</feature>
 		<bundle> mvn:org.eclipse.ecf/org.eclipse.ecf.provider</bundle>
 		<bundle>
 			mvn:org.eclipse.ecf/org.eclipse.ecf.provider.remoteservice
 		</bundle>
 	</feature>
-	<feature name="ecf-rs-distribution-rosgi" version="3.15.7"
+	<feature name="ecf-rs-distribution-rosgi" version="3.15.8"
 		description="ECF RemoteService ROSGi Distribution Provider. https://wiki.eclipse.org/EIG:Configuration_Properties">
-		<feature version="3.15.7">ecf-rs-rsa</feature>
+		<feature version="3.15.8">ecf-rs-rsa</feature>
 		<bundle>mvn:org.eclipse.ecf/org.objectweb.asm</bundle>
 		<bundle>
 			mvn:org.eclipse.ecf/ch.ethz.iks.r_osgi.remote
@@ -90,56 +90,56 @@
 			mvn:org.eclipse.ecf/org.eclipse.ecf.provider.r_osgi
 		</bundle>
 	</feature>
-	<feature name="ecf-rs-discovery-jmdns" version="3.15.7"
+	<feature name="ecf-rs-discovery-jmdns" version="3.15.8"
 		description="ECF RemoteServices JMDNS Discovery Provider">
-		<feature version="3.15.7">ecf-rs-rsa</feature>
+		<feature version="3.15.8">ecf-rs-rsa</feature>
 		<bundle>
 			mvn:org.eclipse.ecf/org.eclipse.ecf.provider.jmdns
 		</bundle>
 	</feature>
-	<feature name="ecf-rs-eventadmin" version="3.15.7"
-		description="ECF 3.15.7 RemoteServices SDK Distributed EventAdmin">
-		<feature version="3.15.7">ecf-rs-rsa</feature>
+	<feature name="ecf-rs-eventadmin" version="3.15.8"
+		description="ECF 3.15.8 RemoteServices SDK Distributed EventAdmin">
+		<feature version="3.15.8">ecf-rs-rsa</feature>
 		<bundle>
 			mvn:org.eclipse.ecf/org.eclipse.ecf.remoteservice.eventadmin
 		</bundle>
 	</feature>
 	<feature name="ecf-rs-examples-timeservice-api"
-		version="3.15.7"
+		version="3.15.8"
 		description="ECF RemoteService TimeService Example API. See https://wiki.eclipse.org/Tutorial:_Building_your_first_OSGi_Remote_Service">
 		<bundle>
 			https://download.eclipse.org/rt/ecf/3.14.19/site.p2/3.14.19.v20210101-2239/plugins/com.mycorp.examples.timeservice.async_2.1.100.v20200611-1508.jar
 		</bundle>
 	</feature>
 	<feature name="ecf-rs-examples-timeservice-host"
-		version="3.15.7"
+		version="3.15.8"
 		description="ECF RemoteService TimeService Example Host. See https://wiki.eclipse.org/Tutorial:_Building_your_first_OSGi_Remote_Service">
-		<feature version="3.15.7">ecf-rs-examples-timeservice-api</feature>
+		<feature version="3.15.8">ecf-rs-examples-timeservice-api</feature>
 		<bundle>
 			https://download.eclipse.org/rt/ecf/3.14.19/site.p2/3.14.19.v20210101-2239/plugins/com.mycorp.examples.timeservice.host_1.1.300.v20200611-1508.jar
 		</bundle>
 	</feature>
 	<feature name="ecf-rs-examples-timeservice-consumer-async"
-		version="3.15.7"
+		version="3.15.8"
 		description="ECF RemoteService TimeService Async Example Consumer.  See https://wiki.eclipse.org/Tutorial:_Building_your_first_OSGi_Remote_Service">
-		<feature version="3.15.7">ecf-rs-examples-timeservice-api</feature>
+		<feature version="3.15.8">ecf-rs-examples-timeservice-api</feature>
 		<bundle>
 			https://download.eclipse.org/rt/ecf/3.14.19/site.p2/3.14.19.v20210101-2239/plugins/com.mycorp.examples.timeservice.consumer.ds.async_1.0.200.v20200611-1508.jar
 		</bundle>
 	</feature>
-	<feature name="ecf-rs-sdk" version="3.15.7"
-		description="ECF 3.15.7 RemoteServices SDK with Generic Distribution Provider and Zeroconf Multicast LAN Discovery Provider">
-		<feature version="3.15.7">ecf-rs-distribution-generic</feature>
-		<feature version="3.15.7">ecf-rs-discovery-jmdns</feature>
-		<feature version="3.15.7">ecf-rs-console</feature>
+	<feature name="ecf-rs-sdk" version="3.15.8"
+		description="ECF 3.15.8 RemoteServices SDK with Generic Distribution Provider and Zeroconf Multicast LAN Discovery Provider">
+		<feature version="3.15.8">ecf-rs-distribution-generic</feature>
+		<feature version="3.15.8">ecf-rs-discovery-jmdns</feature>
+		<feature version="3.15.8">ecf-rs-console</feature>
 	</feature>
 	<feature name="ecf-rs-sdk-examples-timeservicehost"
-		version="3.15.7"
-		description="ECF 3.15.7 RemoteServices SDK with Generic Distribution Provider and Zeroconf Multicast LAN Discovery Provider">
-		<feature version="3.15.7">ecf-rs-distribution-generic</feature>
-		<feature version="3.15.7">ecf-rs-discovery-jmdns</feature>
-		<feature version="3.15.7">ecf-rs-console</feature>
-		<feature version="3.15.7">ecf-rs-examples-timeservice-host</feature>
+		version="3.15.8"
+		description="ECF 3.15.8 RemoteServices SDK with Generic Distribution Provider and Zeroconf Multicast LAN Discovery Provider">
+		<feature version="3.15.8">ecf-rs-distribution-generic</feature>
+		<feature version="3.15.8">ecf-rs-discovery-jmdns</feature>
+		<feature version="3.15.8">ecf-rs-console</feature>
+		<feature version="3.15.8">ecf-rs-examples-timeservice-host</feature>
 	</feature>
 	<repository>https://raw.githubusercontent.com/ECF/XmlRpcProvider/master/build/karaf-features.xml</repository>
 	<!-- Include Py4j RemoteServicesProvider -->
