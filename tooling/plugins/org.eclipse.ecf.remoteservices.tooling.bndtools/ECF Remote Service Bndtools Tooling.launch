@@ -229,7 +229,6 @@
         <setEntry value="org.apache.commons.commons-codec@default:default"/>
         <setEntry value="org.apache.commons.commons-io@default:default"/>
         <setEntry value="org.apache.commons.compress"/>
-        <setEntry value="org.apache.commons.jxpath@default:default"/>
         <setEntry value="org.apache.commons.logging@default:default"/>
         <setEntry value="org.apache.felix.gogo.command@default:default"/>
         <setEntry value="org.apache.felix.gogo.runtime@default:default"/>

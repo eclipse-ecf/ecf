@@ -307,11 +307,6 @@
       <requirement
           name="org.apache.commons.commons-logging"/>
       <requirement
-          name="org.apache.commons.jxpath"
-          versionRange="[1.3.0.v200911051830,1.3.0.v200911051830]"
-          optional="true"
-          max="0"/>
-      <requirement
           name="org.apache.httpcomponents.client5.httpclient5"
           versionRange="[5.1.3.v20221013-1742,5.1.3.v20221013-1742]"
           optional="true"

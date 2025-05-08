@@ -1,4 +1,4 @@
 #This is a generated file; do not edit.
-#Fri Jul 14 14:17:50 PDT 2023
-analyzer=org.eclipse.help.base\#4.3.1000.v20230302-0300?locale\=en
-lucene=9.4.2.v20221211-0752
+#Thu May 08 15:32:46 PDT 2025
+analyzer=org.eclipse.help.base\#4.5.0.v20250228-0140?locale\=en
+lucene=10.1.0.v20241221-1000
