@@ -30,8 +30,8 @@
                   <additionalArgument>-Xdoclint:none</additionalArgument>
                   <additionalArgument>-splitindex</additionalArgument>
                   <additionalArgument>-use</additionalArgument>
-                  <additionalArgument>-doctitle "Eclipse Communication Framework (ECF) 3.15.8 API"</additionalArgument>
-                  <additionalArgument>-windowtitle "Eclipse Communication Framework (ECF) 3.15.8 API"</additionalArgument>
+                  <additionalArgument>-doctitle "Eclipse Communication Framework (ECF) 3.16.0 API"</additionalArgument>
+                  <additionalArgument>-windowtitle "Eclipse Communication Framework (ECF) 3.16.0 API"</additionalArgument>
                   <additionalArgument>-link https://docs.oracle.com/en/java/javase/11/docs/api/</additionalArgument>
                   <additionalArgument>-link https://docs.osgi.org/javadoc/osgi.core/7.0.0/</additionalArgument>
                   <additionalArgument>-tag 'noimplement:a:Restriction:'</additionalArgument>
