@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %bundle.name
+Bundle-SymbolicName: org.eclipse.ecf.ai.mcp.tools
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: %bundle.provider
+Automatic-Module-Name: org.eclipse.ecf.ai.mcp.tools
+Bundle-RequiredExecutionEnvironment: JavaSE-17
