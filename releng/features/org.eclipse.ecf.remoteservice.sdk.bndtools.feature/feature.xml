@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.ecf.remoteservice.sdk.bndtools.feature"
       label="ECF Remote Services SDK for Bndtools"
-      version="3.15.8.qualifier"
+      version="3.16.0.qualifier"
       provider-name="%providerName"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">
@@ -79,6 +79,10 @@ https://wiki.eclipse.org/ECF#OSGi_Remote_Services
 
    <includes
          id="org.eclipse.ecf.core.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.ecf.ai.mcp.tools.feature"
          version="0.0.0"/>
 
    <plugin

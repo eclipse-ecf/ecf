@@ -10,7 +10,8 @@ org.eclipse.ecf.filetransfer.ssl.feature
 org.eclipse.ecf.filetransfer.httpclient5.feature
 org.eclipse.ecf.filetransfer.httpclientjava.feature
 org.eclipse.ecf.remoteservice.examples.feature
-org.eclipse.ecf.remoteservices.tooling.bndtools.feature"
+org.eclipse.ecf.remoteservices.tooling.bndtools.feature 
+org.eclipse.ecf.ai.mcp.tools.feature"
 
 # Exclude orbit bundles, they should be done separately
 orbit_bundles="javax.servlet

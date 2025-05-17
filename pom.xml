@@ -153,6 +153,9 @@
     <module>providers/bundles/org.eclipse.ecf.provider.xmpp.remoteservice</module>
     <module>providers/bundles/org.eclipse.ecf.provider.xmpp.ui</module>
 
+	<!-- Model Context Protocol Tooling Support Bundle -->
+    <module>framework/bundles/org.eclipse.ecf.ai.mcp.tools</module>
+
     <module>server-side/bundles/org.eclipse.ecf.remoteservice.eventadmin</module>
     <module>server-side/bundles/org.eclipse.ecf.server.generic</module>
     <module>server-side/bundles/org.eclipse.ecf.server</module>
@@ -206,6 +209,7 @@
     <module>releng/features/org.eclipse.ecf.tests.filetransfer.feature</module>
     <module>releng/features/org.eclipse.ecf.xmpp.feature</module>
     <module>releng/features/org.eclipse.ecf.remoteservices.tooling.bndtools.feature</module>
+    <module>releng/features/org.eclipse.ecf.ai.mcp.tools.feature</module>
 
     <module>releng/org.eclipse.ecf.releng.target</module>
     <module>releng/org.eclipse.ecf.releng.repository</module>
