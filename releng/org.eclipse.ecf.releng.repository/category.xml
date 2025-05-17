@@ -125,12 +125,6 @@
          This SDK has tooling for development of OSGi Remote Services on Bndtools 7.1+.  This includes Eclipse views for Remote Services development (discovered endpoint descriptions, and monitoring of the RemoteServiceAdmin OSGi service implementation.   It also includes Bndtools workspace, project, and bndrun templates, and OSGi Service creation wizards.   Bndtools 7.1+ must be installed prior to successfully installing this feature.  See here for Bndtools 7.1 installation instructions:  https://bndtools.org/installation.html
       </description>
    </category-def>
-   <category-def name="ecfai.tools" label="AI Model Context Protocol Tool Support">
-      <category name="ecfai.tools"/>
-      <description>
-         This feature provides support for using the Model Context Protocol with ECF Remote Services.  Specifically it provides some annotations for providing MCP tools descriptions.
-      </description>
-   </category-def>
    <category-def name="ecf.ai.mcp" label="Model Context Protocol (MCP) Tools Support">
       <category name="remoteservices"/>
       <description>
