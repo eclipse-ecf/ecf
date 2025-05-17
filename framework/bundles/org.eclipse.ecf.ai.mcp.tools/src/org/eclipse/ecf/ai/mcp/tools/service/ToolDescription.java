@@ -10,8 +10,10 @@
 package org.eclipse.ecf.ai.mcp.tools.service;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.eclipse.ecf.ai.mcp.tools.annotation.Tool;
@@ -27,5 +29,12 @@ public record ToolDescription(String name, String description, List<ToolParamDes
 					: null;
 		}).filter(Objects::nonNull).collect(Collectors.toList());
 
+	}
+
+	public static List<ToolDescription> fromService(Object svc, String serviceClass) {
+		Optional<Class<?>> optClass = Arrays.asList(svc.getClass().getInterfaces()).stream().filter(c -> {
+			return c.getName().equals(serviceClass);
+		}).findFirst();
+		return optClass.isPresent() ? ToolDescription.fromClass(optClass.get()) : Collections.emptyList();
 	}
 }
