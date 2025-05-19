@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.eclipse.ecf.ai.mcp.tools.annotation.Tool;
+import org.eclipse.ecf.ai.mcp.tools.annotation.ToolAnnotation;
 
 /**
  * Describes the ToolAnnotation type in the MCP schema (draft as of 5/18/2025)
@@ -24,7 +24,7 @@ import org.eclipse.ecf.ai.mcp.tools.annotation.Tool;
 public record ToolAnnotationDescription(boolean destructiveHint, boolean idempotentHint, boolean openWorldHint,
 		boolean readOnlyHint, String title) {
 
-	public static List<ToolAnnotationDescription> fromAnnotations(Tool.ToolAnnotation[] annotations) {
+	public static List<ToolAnnotationDescription> fromAnnotations(ToolAnnotation[] annotations) {
 		return (annotations != null) ? Arrays.asList(annotations).stream().map(a -> {
 			return new ToolAnnotationDescription(a.destructiveHint(), a.idempotentHint(), a.openWorldHint(),
 					a.readOnlyHint(), a.title());
