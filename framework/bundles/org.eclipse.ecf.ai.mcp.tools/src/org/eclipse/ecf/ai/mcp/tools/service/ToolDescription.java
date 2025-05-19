@@ -18,14 +18,17 @@ import java.util.stream.Collectors;
 
 import org.eclipse.ecf.ai.mcp.tools.annotation.Tool;
 
-public record ToolDescription(String name, String description, List<ToolParamDescription> toolParamDescriptions) {
+public record ToolDescription(String name, String description, List<ToolParamDescription> toolParamDescriptions,
+		ToolResultDescription resultDesc, List<ToolAnnotationDescription> annotations) {
 
 	public static List<ToolDescription> fromClass(Class<?> clazz) {
 		return Arrays.asList(clazz.getMethods()).stream().map(m -> {
 			Tool ma = m.getAnnotation(Tool.class);
 			return (ma != null)
 					? new ToolDescription(m.getName(), ma.description(),
-							ToolParamDescription.fromParameters(m.getParameters()))
+							ToolParamDescription.fromParameters(m.getParameters()), 
+							ToolResultDescription.fromMethod(m),
+							ToolAnnotationDescription.fromAnnotations(ma.annotations()))
 					: null;
 		}).filter(Objects::nonNull).collect(Collectors.toList());
 
@@ -37,4 +40,5 @@ public record ToolDescription(String name, String description, List<ToolParamDes
 		}).findFirst();
 		return optClass.isPresent() ? ToolDescription.fromClass(optClass.get()) : Collections.emptyList();
 	}
+
 }

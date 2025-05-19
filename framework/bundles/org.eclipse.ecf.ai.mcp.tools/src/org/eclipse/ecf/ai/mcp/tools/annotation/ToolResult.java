@@ -15,13 +15,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.PARAMETER)
-public @interface ToolParam {
-
-	String name() default "";
+@Target(ElementType.METHOD)
+public @interface ToolResult {
 
 	String description() default "";
-
-	boolean required() default true;
 
 }

@@ -11,18 +11,27 @@ package org.eclipse.ecf.ai.mcp.tools.service;
 
 import java.lang.reflect.Parameter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 import org.eclipse.ecf.ai.mcp.tools.annotation.ToolParam;
 
-public record ToolParamDescription(String description, boolean required) {
+public record ToolParamDescription(String name, String description, boolean required) {
 
 	public static List<ToolParamDescription> fromParameters(Parameter[] parameters) {
-		return Arrays.asList(parameters).stream().map(p -> {
+		return parameters != null ? Arrays.asList(parameters).stream().map(p -> {
 			ToolParam tp = p.getAnnotation(ToolParam.class);
-			return (tp != null) ? new ToolParamDescription(tp.description(), tp.required()) : null;
-		}).filter(Objects::nonNull).collect(Collectors.toList());
+			if (tp != null) {
+				String name = tp.name();
+				if ("".equals(name)) {
+					name = p.getName();
+				}
+				return new ToolParamDescription(name, tp.description(), tp.required());
+			}
+			return null;
+		}).filter(Objects::nonNull).collect(Collectors.toList()) : Collections.emptyList();
 	}
+
 }

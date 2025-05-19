@@ -7,21 +7,15 @@
  *
   * SPDX-License-Identifier: EPL-2.0
  *****************************************************************************/
-package org.eclipse.ecf.ai.mcp.tools.annotation;
+package org.eclipse.ecf.ai.mcp.tools.service;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.util.List;
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.PARAMETER)
-public @interface ToolParam {
+public class AbstractToolGroup implements ToolGroup {
 
-	String name() default "";
-
-	String description() default "";
-
-	boolean required() default true;
+	@Override
+	public List<ToolDescription> getToolDescriptions(String interfaceClassName) {
+		return ToolDescription.fromService(this, interfaceClassName);
+	}
 
 }
