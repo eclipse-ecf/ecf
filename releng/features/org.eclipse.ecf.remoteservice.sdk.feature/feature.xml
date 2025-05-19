@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.ecf.remoteservice.sdk.feature"
       label="ECF Remote Services SDK for OSGi clients and servers"
-      version="3.16.0.qualifier"
+      version="3.16.1.qualifier"
       provider-name="%providerName"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">
