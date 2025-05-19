@@ -28,7 +28,7 @@ public record ToolDescription(String name, String description, List<ToolParamDes
 					? new ToolDescription(m.getName(), ma.description(),
 							ToolParamDescription.fromParameters(m.getParameters()), 
 							ToolResultDescription.fromMethod(m),
-							ToolAnnotationDescription.fromAnnotations(ma.annotations()))
+							ToolAnnotationDescription.fromAnnotations(ma.value()))
 					: null;
 		}).filter(Objects::nonNull).collect(Collectors.toList());
 
