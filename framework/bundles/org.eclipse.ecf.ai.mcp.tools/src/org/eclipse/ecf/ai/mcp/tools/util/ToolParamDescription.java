@@ -7,7 +7,7 @@
  *
   * SPDX-License-Identifier: EPL-2.0
  *****************************************************************************/
-package org.eclipse.ecf.ai.mcp.tools.service;
+package org.eclipse.ecf.ai.mcp.tools.util;
 
 import java.lang.reflect.Parameter;
 import java.util.Arrays;

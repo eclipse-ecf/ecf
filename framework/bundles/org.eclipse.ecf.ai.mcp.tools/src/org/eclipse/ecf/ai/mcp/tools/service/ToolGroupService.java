@@ -11,11 +11,11 @@ package org.eclipse.ecf.ai.mcp.tools.service;
 
 import java.util.List;
 
-public class AbstractToolGroup implements ToolGroup {
+import org.eclipse.ecf.ai.mcp.tools.util.ToolDescription;
 
-	@Override
-	public List<ToolDescription> getToolDescriptions(String interfaceClassName) {
+public interface ToolGroupService {
+
+	default List<ToolDescription> getToolDescriptions(String interfaceClassName) {
 		return ToolDescription.fromService(this, interfaceClassName);
 	}
-
 }

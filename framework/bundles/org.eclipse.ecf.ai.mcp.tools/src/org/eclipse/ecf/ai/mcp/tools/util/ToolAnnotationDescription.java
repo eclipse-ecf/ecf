@@ -7,7 +7,7 @@
  *
   * SPDX-License-Identifier: EPL-2.0
  *****************************************************************************/
-package org.eclipse.ecf.ai.mcp.tools.service;
+package org.eclipse.ecf.ai.mcp.tools.util;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -25,10 +25,13 @@ public record ToolAnnotationDescription(boolean destructiveHint, boolean idempot
 		boolean readOnlyHint, String title) {
 
 	public static List<ToolAnnotationDescription> fromAnnotations(ToolAnnotation[] annotations) {
-		return (annotations != null) ? Arrays.asList(annotations).stream().map(a -> {
-			return new ToolAnnotationDescription(a.destructiveHint(), a.idempotentHint(), a.openWorldHint(),
-					a.readOnlyHint(), a.title());
-		}).collect(Collectors.toList()) : Collections.emptyList();
-
+		if (annotations != null) {
+			return Arrays.asList(annotations).stream().map(a -> {
+				return new ToolAnnotationDescription(a.destructiveHint(), a.idempotentHint(), a.openWorldHint(),
+						a.readOnlyHint(), a.title());
+			}).collect(Collectors.toList());
+		} else {
+			return Collections.emptyList();
+		}
 	}
 }
