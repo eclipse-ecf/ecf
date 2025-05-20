@@ -22,5 +22,6 @@ public @interface Tool {
 
 	String description() default "";
 
-	ToolAnnotation[] value();
+	ToolAnnotation[] annotations() default {};
+
 }

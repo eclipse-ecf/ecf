@@ -7,8 +7,9 @@
  *
   * SPDX-License-Identifier: EPL-2.0
  *****************************************************************************/
-package org.eclipse.ecf.ai.mcp.tools.service;
+package org.eclipse.ecf.ai.mcp.tools.util;
 
+import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -17,19 +18,26 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.eclipse.ecf.ai.mcp.tools.annotation.Tool;
+import org.eclipse.ecf.ai.mcp.tools.annotation.ToolAnnotations;
 
 public record ToolDescription(String name, String description, List<ToolParamDescription> toolParamDescriptions,
-		ToolResultDescription resultDesc, List<ToolAnnotationDescription> annotations) {
+		ToolResultDescription resultDescriptions, List<ToolAnnotationDescription> toolAnnotationDescriptions) {
 
 	public static List<ToolDescription> fromClass(Class<?> clazz) {
 		return Arrays.asList(clazz.getMethods()).stream().map(m -> {
-			Tool ma = m.getAnnotation(Tool.class);
-			return (ma != null)
-					? new ToolDescription(m.getName(), ma.description(),
-							ToolParamDescription.fromParameters(m.getParameters()), 
-							ToolResultDescription.fromMethod(m),
-							ToolAnnotationDescription.fromAnnotations(ma.value()))
-					: null;
+			// skip static methods
+			if (!Modifier.isStatic(m.getModifiers())) {
+				// Look for Tool annotation
+				Tool ma = m.getAnnotation(Tool.class);
+				if (ma != null) {
+					// Look for ToolAnnotations method annotation
+					ToolAnnotations tas = m.getAnnotation(ToolAnnotations.class);
+					return new ToolDescription(m.getName(), ma.description(),
+							ToolParamDescription.fromParameters(m.getParameters()), ToolResultDescription.fromMethod(m),
+							ToolAnnotationDescription.fromAnnotations(tas != null ? tas.value() : null));
+				}
+			}
+			return null;
 		}).filter(Objects::nonNull).collect(Collectors.toList());
 
 	}

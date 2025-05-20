@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * (draft as of 5/18/2025) located <a href=
  * "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/schema/draft/schema.json#L2164">here</a>
  */
-@Repeatable(Tool.class)
+@Repeatable(ToolAnnotations.class)
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface ToolAnnotation {
@@ -24,6 +24,5 @@ public @interface ToolAnnotation {
 	boolean readOnlyHint() default false;
 
 	String title() default "";
-	
-} 
 
+}
