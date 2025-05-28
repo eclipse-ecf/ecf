@@ -1,12 +1,3 @@
-/****************************************************************************
- * Copyright (c) 2025 Composent, Inc.
- *
- * This program and the accompanying materials are made
- * available under the terms of the Eclipse Public License 2.0
- * which is available at https://www.eclipse.org/legal/epl-2.0/
- *
-  * SPDX-License-Identifier: EPL-2.0
- *****************************************************************************/
 package org.eclipse.ecf.ai.mcp.tools.util;
 
 import java.lang.reflect.Modifier;
@@ -21,7 +12,7 @@ import org.eclipse.ecf.ai.mcp.tools.annotation.Tool;
 import org.eclipse.ecf.ai.mcp.tools.annotation.ToolAnnotations;
 
 public record ToolDescription(String name, String description, List<ToolParamDescription> toolParamDescriptions,
-		ToolResultDescription resultDescriptions, List<ToolAnnotationDescription> toolAnnotationDescriptions) {
+		ToolResultDescription resultDescription, ToolAnnotationsDescription toolAnnotationsDescription) {
 
 	public static List<ToolDescription> fromClass(Class<?> clazz) {
 		return Arrays.asList(clazz.getMethods()).stream().map(m -> {
@@ -34,7 +25,7 @@ public record ToolDescription(String name, String description, List<ToolParamDes
 					ToolAnnotations tas = m.getAnnotation(ToolAnnotations.class);
 					return new ToolDescription(m.getName(), ma.description(),
 							ToolParamDescription.fromParameters(m.getParameters()), ToolResultDescription.fromMethod(m),
-							ToolAnnotationDescription.fromAnnotations(tas != null ? tas.value() : null));
+							ToolAnnotationsDescription.fromAnnotations(tas));
 				}
 			}
 			return null;
