@@ -1,4 +1,4 @@
-## Eclipse Communication Framework
+## Eclipse Communications Framework
 ECF is a set of APIs/frameworks/types for inter-process communication
 
 Current version: 3.16.2
