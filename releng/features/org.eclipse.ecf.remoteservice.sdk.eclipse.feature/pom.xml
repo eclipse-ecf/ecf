@@ -9,6 +9,6 @@
     <relativePath>../../../</relativePath>
   </parent>
   <artifactId>org.eclipse.ecf.remoteservice.sdk.eclipse.feature</artifactId>
-  <version>3.16.1-SNAPSHOT</version>
+  <version>3.16.2-SNAPSHOT</version>
   <packaging>eclipse-feature</packaging>
 </project>
