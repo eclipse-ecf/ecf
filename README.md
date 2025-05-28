@@ -1,8 +1,27 @@
 ## Eclipse Communication Framework
 ECF is a set of APIs/frameworks/types for inter-process communication
 
-Current version: 3.15.6
-Release Date: 3/15/2025
+Current version: 3.16.1
+Release Date: 5/19/2025
+
+## NEW (5/19/2025) ECF adds tooling support for Model Context Protocol (MCP)
+
+As part of ECF 3.16.1, there is a new bundle/jar in ECF that adds annotation classes and a few utility classes.  It's available in [ECF 3.16.1 p2 repo](https://download.eclipse.org/rt/ecf/latest/) and via [maven central](https://central.sonatype.com/artifact/org.eclipse.ecf/org.eclipse.ecf.ai.mcp.tools).
+
+There is an example [here](https://github.com/ECF/Py4j-RemoteServicesProvider/blob/master/examples/org.eclipse.ecf.examples.ai.mcp.toolservice/src/org/eclipse/ecf/examples/ai/mcp/toolservice/ArithmeticTools.java) of using these annotations for two tools declared by a single service interface.
+
+### Background ###
+
+The [Model Context Protocol]() is a rapidly-being-adopted client->server protocol for integrating existing code and services in LLMs, so they can be called by the LLM (e.g. [Anthropic's Claude](https://claude.ai/new)).  One integration approach is by adding Tools to MCP servers.  
+
+A tool for MCP is essentially a single method (in Java) or a function (in Python). When creating new tools for Python servers, usually a decorator defined in the Python SDK would be used. For example:
+```
+@mcp.tool(description='myfunct does some amazing stuff')
+def myfunc() {
+   pass
+}
+```
+The MCP Java SDK, however does not yet have equivalent annotation classes (e.g. @Tool, @ToolParam, @ToolAnnotation, etc).   ECF's [new bundle project](https://github.com/eclipse-ecf/ecf/tree/master/framework/bundles/org.eclipse.ecf.ai.mcp.tools), provides these annotation classes in Java.  Although this bundle has *no* external dependencies other than Java 17 (not on other ECF classes nor any other framework), it would be better if these or some annotations were part of the MCP itself, and so we are in the process of [getting annotation classes added to the MCP Java SDK itself](https://github.com/modelcontextprotocol/java-sdk/pull/235) through [this pull request](https://github.com/modelcontextprotocol/java-sdk/pull/235).  If the annotation classes are standardized and in the Java SDK itself in future MCP releases, the references in all ECF code will be updated to depend upon the sdk-provided versions.
 
 ## NEW (4/28/2025) Bndtools Template for Python.Java Remote Services Development
 
