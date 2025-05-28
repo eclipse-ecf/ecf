@@ -1,8 +1,8 @@
 ## Eclipse Communication Framework
 ECF is a set of APIs/frameworks/types for inter-process communication
 
-Current version: 3.16.1
-Release Date: 5/19/2025
+Current version: 3.16.2
+Release Date: 5/28/2025
 
 ## NEW (5/19/2025) ECF adds tooling support for Model Context Protocol (MCP)
 
