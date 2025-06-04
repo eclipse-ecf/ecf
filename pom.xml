@@ -156,6 +156,9 @@
 	<!-- Model Context Protocol Tooling Support Bundle -->
     <module>framework/bundles/org.eclipse.ecf.ai.mcp.tools</module>
 
+	<!-- A2A Tooling Support Bundle -->
+    <module>framework/bundles/org.eclipse.ecf.ai.a2a</module>
+
     <module>server-side/bundles/org.eclipse.ecf.remoteservice.eventadmin</module>
     <module>server-side/bundles/org.eclipse.ecf.server.generic</module>
     <module>server-side/bundles/org.eclipse.ecf.server</module>
@@ -210,6 +213,7 @@
     <module>releng/features/org.eclipse.ecf.xmpp.feature</module>
     <module>releng/features/org.eclipse.ecf.remoteservices.tooling.bndtools.feature</module>
     <module>releng/features/org.eclipse.ecf.ai.mcp.tools.feature</module>
+    <module>releng/features/org.eclipse.ecf.ai.a2a.feature</module>
 
     <module>releng/org.eclipse.ecf.releng.target</module>
     <module>releng/org.eclipse.ecf.releng.repository</module>
