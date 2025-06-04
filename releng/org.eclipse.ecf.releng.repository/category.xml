@@ -3,9 +3,6 @@
    <feature id="org.eclipse.ecf.core.feature" version="0.0.0">
       <category name="other"/>
    </feature>
-   <feature id="org.eclipse.ecf.core.ssl.feature" version="0.0.0">
-      <category name="other"/>
-   </feature>
    <feature id="org.eclipse.ecf.filetransfer.feature" version="0.0.0">
       <category name="other"/>
    </feature>
@@ -15,13 +12,7 @@
    <feature id="org.eclipse.ecf.filetransfer.httpclientjava.feature" version="0.0.0">
       <category name="other"/>
    </feature>
-   <feature id="org.eclipse.ecf.filetransfer.ssl.feature" version="0.0.0">
-      <category name="other"/>
-   </feature>
    <feature id="org.eclipse.ecf.core.feature.source" version="0.0.0">
-      <category name="other"/>
-   </feature>
-   <feature id="org.eclipse.ecf.core.ssl.feature.source" version="0.0.0">
       <category name="other"/>
    </feature>
    <feature id="org.eclipse.ecf.filetransfer.feature.source" version="0.0.0">
@@ -31,9 +22,6 @@
       <category name="other"/>
    </feature>
    <feature id="org.eclipse.ecf.filetransfer.httpclientjava.feature.source" version="0.0.0">
-      <category name="other"/>
-   </feature>
-   <feature id="org.eclipse.ecf.filetransfer.ssl.feature.source" version="0.0.0">
       <category name="other"/>
    </feature>
    <feature id="org.eclipse.ecf.remoteservice.sdk.feature" version="0.0.0">
@@ -110,6 +98,8 @@
    </feature>
    <feature id="org.eclipse.ecf.ai.mcp.tools.feature">
       <category name="ecf.ai.mcp"/>
+   </feature>
+   <feature id="org.eclipse.ecf.dependencies.feature">
    </feature>
    <category-def name="remoteservices" label="ECF Remote Services SDKs"/>
    <category-def name="other" label="Other ECF Features"/>
