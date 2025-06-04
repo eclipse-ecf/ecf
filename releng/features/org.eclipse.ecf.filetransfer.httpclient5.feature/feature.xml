@@ -30,48 +30,4 @@
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
-         id="org.eclipse.ecf.provider.filetransfer.httpclient5.win32"
-         os="win32"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.commons.commons-codec"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.httpcomponents.client5.httpclient5"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.httpcomponents.client5.httpclient5-win"
-         os="win32"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.httpcomponents.core5.httpcore5"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.httpcomponents.core5.httpcore5-h2"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
 </feature>

@@ -27,8 +27,4 @@
          id="org.eclipse.ecf.provider.dnssd"
          version="0.0.0"/>
 
-   <plugin
-         id="org.xbill.dns"
-         version="0.0.0"/>
-
 </feature>
