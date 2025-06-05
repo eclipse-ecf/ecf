@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.ecf.dependencies.feature"
+      label="ECF DependenciesFeature"
+      version="0.0.1.qualifier"
+      provider-name="Eclipse.org"
+      license-feature="org.eclipse.license"
+      license-feature-version="0.0.0">
+
+   <description url="http://www.eclipse.org/ecf">
+      These are third party dependencies needed in the update site.
+   </description>
+
+   <plugin
+         id="org.xbill.dns"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.apache.httpcomponents.client5.httpclient5"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.apache.httpcomponents.client5.httpclient5-win"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.apache.httpcomponents.core5.httpcore5"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.apache.httpcomponents.core5.httpcore5-h2"
+         version="0.0.0"/>
+
+</feature>
