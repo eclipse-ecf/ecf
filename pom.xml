@@ -16,6 +16,7 @@
   <url>https://www.eclipse.org/ecf/</url>
   <inceptionYear>2004</inceptionYear>
 
+  <!-- Test a no-op change -->
 
   <organization>
     <name>Eclipse Foundation</name>
