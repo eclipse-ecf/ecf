@@ -76,7 +76,7 @@
     <tycho-version>4.0.10</tycho-version>
     <cbi-version>1.4.3</cbi-version>
     <target-platform>2024-06</target-platform>
-    <execution-environment>JavaSE-17</execution-environment>
+    <execution-environment>JavaSE-21</execution-environment>
     <eclipserun-repo>https://download.eclipse.org/eclipse/updates/latest/</eclipserun-repo>
     <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
     <project.resources.sourceEncoding>ISO-8859-1</project.resources.sourceEncoding>
