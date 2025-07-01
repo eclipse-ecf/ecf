@@ -24,11 +24,6 @@ https://wiki.eclipse.org/ECF#OSGi_Remote_Services
 
    <requires>
       <import feature="org.eclipse.ecf.remoteservice.feature" version="2.1" match="compatible"/>
-      <import plugin="org.apache.commons.commons-codec" version="1.6" match="compatible"/>
-      <import plugin="org.apache.commons.commons-logging" version="1.2.0" match="compatible"/>
-      <import plugin="org.apache.httpcomponents.httpclient" version="4.2" match="compatible"/>
-      <import plugin="org.apache.httpcomponents.httpcore" version="4.2" match="compatible"/>
-      <import plugin="json"/>
    </requires>
 
    <plugin

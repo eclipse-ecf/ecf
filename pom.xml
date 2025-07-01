@@ -73,7 +73,7 @@
 
   <properties>
     <tycho-version>4.0.10</tycho-version>
-    <cbi-version>1.4.3</cbi-version>
+    <cbi-version>1.5.2</cbi-version>
     <target-platform>2024-06</target-platform>
     <execution-environment>JavaSE-17</execution-environment>
     <eclipserun-repo>https://download.eclipse.org/eclipse/updates/latest/</eclipserun-repo>
@@ -188,6 +188,7 @@
     <module>releng/features/org.eclipse.ecf.core</module>
     <module>releng/features/org.eclipse.ecf.core.feature</module>
     <module>releng/features/org.eclipse.ecf.datashare.feature</module>
+    <module>releng/features/org.eclipse.ecf.dependencies.feature</module>
     <module>releng/features/org.eclipse.ecf.discovery.dnssd.feature</module>
     <module>releng/features/org.eclipse.ecf.discovery.feature</module>
     <module>releng/features/org.eclipse.ecf.discovery.jmdns.feature</module>
@@ -375,7 +376,15 @@
              <waitUntil>published</waitUntil>
              <centralSnapshotsUrl>https://central.sonatype.com/repository/maven-snapshots/</centralSnapshotsUrl>
           </configuration>
-        </plugin>        
+    </plugin>
+    <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-p2-repository-plugin</artifactId>
+          <version>${tycho-version}</version>
+          <configuration>
+            <includeAllSources>true</includeAllSources>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
