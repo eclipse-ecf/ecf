@@ -9,6 +9,7 @@
  *****************************************************************************/
 package org.eclipse.ecf.ai.a2a.util;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -35,7 +36,7 @@ public record AgentCardDescription(
 		boolean supportsAuthenticatedExtendedCard, 
 		String url, 
 		String version,
-		AgentAuthenticationDescription authentication) {
+		AgentAuthenticationDescription authentication) implements Serializable {
 
 	private static <T> List<T> a2l(@SuppressWarnings("unchecked") T... array) {
 		return Arrays.asList(array);

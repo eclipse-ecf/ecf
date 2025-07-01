@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.ecf.ai.a2a.feature"
       label="ECF AI Model Context Protocol Tool Support Feature"
-      version="1.0.0.qualifier"
+      version="1.1.0.qualifier"
       provider-name="Eclipse.org - ECF"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">

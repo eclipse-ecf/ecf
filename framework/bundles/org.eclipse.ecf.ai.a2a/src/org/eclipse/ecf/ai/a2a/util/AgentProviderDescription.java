@@ -9,7 +9,9 @@
  *****************************************************************************/
 package org.eclipse.ecf.ai.a2a.util;
 
+import java.io.Serializable;
+
 public record AgentProviderDescription(
 		String organization, 
-		String url) {
+		String url) implements Serializable {
 }

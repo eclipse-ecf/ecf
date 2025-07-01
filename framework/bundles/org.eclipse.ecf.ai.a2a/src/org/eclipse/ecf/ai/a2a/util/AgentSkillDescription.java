@@ -9,6 +9,7 @@
  *****************************************************************************/
 package org.eclipse.ecf.ai.a2a.util;
 
+import java.io.Serializable;
 import java.util.List;
 
 public record AgentSkillDescription(String description, 
@@ -17,6 +18,6 @@ public record AgentSkillDescription(String description,
 		List<String> inputModes, 
 		String name, 
 		List<String> outputModes, 
-		List<String> tags) {
+		List<String> tags) implements Serializable {
 
 }

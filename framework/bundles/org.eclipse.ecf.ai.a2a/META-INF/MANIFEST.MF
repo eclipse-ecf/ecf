@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %bundle.name
 Bundle-SymbolicName: org.eclipse.ecf.ai.a2a;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Export-Package: org.eclipse.ecf.ai.a2a.annotations;version="1.0.0",
  org.eclipse.ecf.ai.a2a.service;version="1.0.0",
- org.eclipse.ecf.ai.a2a.util;version="1.0.0"
+ org.eclipse.ecf.ai.a2a.util;version="1.1.0"
 Bundle-Vendor: %bundle.provider
 Automatic-Module-Name: org.eclipse.ecf.ai.a2a
 Bundle-RequiredExecutionEnvironment: JavaSE-17
