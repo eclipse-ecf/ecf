@@ -9,9 +9,10 @@
  *****************************************************************************/
 package org.eclipse.ecf.ai.a2a.util;
 
+import java.io.Serializable;
 import java.util.List;
 
 public record AgentAuthenticationDescription(
 		List<String> schemes, 
-		String credentials) {
+		String credentials) implements Serializable {
 }

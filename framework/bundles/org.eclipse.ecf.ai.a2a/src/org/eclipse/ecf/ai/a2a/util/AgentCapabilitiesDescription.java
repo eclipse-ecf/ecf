@@ -9,8 +9,10 @@
  *****************************************************************************/
 package org.eclipse.ecf.ai.a2a.util;
 
+import java.io.Serializable;
+
 public record AgentCapabilitiesDescription(
 		boolean pushNotifications, 
 		boolean stateTransitionHistory, 
-		boolean streaming) {
+		boolean streaming) implements Serializable {
 }
