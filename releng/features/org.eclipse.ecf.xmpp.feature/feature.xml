@@ -43,8 +43,4 @@ https://wiki.eclipse.org/ECF#OSGi_Remote_Services
          id="org.eclipse.ecf.provider.xmpp.remoteservice"
          version="0.0.0"/>
 
-   <plugin
-         id="org.xbill.dns"
-         version="0.0.0"/>
-
 </feature>
