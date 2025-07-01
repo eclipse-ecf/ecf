@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 import org.eclipse.ecf.ai.mcp.tools.annotation.ToolParam;
 
-public record ToolParamDescription(String name, String description, boolean required, Parameter parameter) implements Serializable {
+public record ToolParamDescription(String name, String description, boolean required) implements Serializable {
 
 	public static List<ToolParamDescription> fromParameters(Parameter[] parameters) {
 		return parameters != null ? Arrays.asList(parameters).stream().map(p -> {
@@ -29,7 +29,7 @@ public record ToolParamDescription(String name, String description, boolean requ
 				if ("".equals(name)) {
 					name = p.getName();
 				}
-				return new ToolParamDescription(name, tp.description(), tp.required(), p);
+				return new ToolParamDescription(name, tp.description(), tp.required());
 			}
 			return null;
 		}).filter(Objects::nonNull).collect(Collectors.toList()) : Collections.emptyList();
