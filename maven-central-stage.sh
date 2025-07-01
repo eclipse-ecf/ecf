@@ -75,9 +75,11 @@ deploy () {
 
 	#local settings=/opt/public/hipp/homes/genie.ecf/.m2/settings-deploy-ossrh.xml
 	#local settings=~/.m2/settings.xml
-	echo "mvn gpg:sign-and-deploy-file " \
+	echo "mvn gpg:sign-and-deploy-file -DrepositoryId=ossrh " \
+	  "-Durl=https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/" \
 	  "$props -Dtycho.mode=maven"
-	mvn gpg:sign-and-deploy-file  \
+	mvn gpg:sign-and-deploy-file -DrepositoryId=ossrh \
+	  -Durl=https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/ \
 	  $props -Dtycho.mode=maven
 }
 
