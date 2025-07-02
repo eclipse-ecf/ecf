@@ -75,7 +75,7 @@ deploy () {
 
 	#local settings=/opt/public/hipp/homes/genie.ecf/.m2/settings-deploy-ossrh.xml
 	#local settings=~/.m2/settings.xml
-	echo "mvn gpg:sign-and-deploy-file -DrepositoryId=central " \
+	echo "mvn gpg:sign " \
 	  "-Durl=https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/" \
 	  "$props -Dtycho.mode=maven"
 	mvn gpg:sign-and-deploy-file -DrepositoryId=central \
@@ -197,6 +197,8 @@ check_maven_central() {
 	fi
 	local jar_version=$(find -name "$1-*-SNAPSHOT.jar" | tail -n1 | sed -e "s/.*$1-\(.*\)-SNAPSHOT.jar/\1/")
 	local op="="
+	if [ -z "$jar_version"] ; then
+	   jar_version="0.0.0"
 	if [ $(echo $jar_version | cut -f1 -d.) -gt "$(echo $central_version | cut -f1 -d.)" ] ; then
 		op=">"
 	elif [ $(echo $jar_version | cut -f2 -d.) -gt "$(echo $central_version | cut -f2 -d.)" ] ; then
