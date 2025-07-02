@@ -195,6 +195,7 @@ check_maven_central() {
 	local op="="
 	if [ -z "$jar_version"] ; then
 	   jar_version="0.0.0"
+	fi
 	if [ $(echo $jar_version | cut -f1 -d.) -gt "$(echo $central_version | cut -f1 -d.)" ] ; then
 		op=">"
 	elif [ $(echo $jar_version | cut -f2 -d.) -gt "$(echo $central_version | cut -f2 -d.)" ] ; then
