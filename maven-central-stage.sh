@@ -76,7 +76,7 @@ deploy () {
 	#local settings=/opt/public/hipp/homes/genie.ecf/.m2/settings-deploy-ossrh.xml
 	#local settings=~/.m2/settings.xml
 	echo "mvn --projects $2 gpg:sign deploy"
-	mvn --projects :$2 gpg:sign deploy 
+	mvn --projects ":$2" gpg:sign deploy 
 }
 
 bundles=""
@@ -193,7 +193,7 @@ check_maven_central() {
 	fi
 	local jar_version=$(find -name "$1-*-SNAPSHOT.jar" | tail -n1 | sed -e "s/.*$1-\(.*\)-SNAPSHOT.jar/\1/")
 	local op="="
-	if [ -z "$jar_version"] ; then
+	if [ -z "$jar_version" ] ; then
 	   jar_version="0.0.0"
 	fi
 	if [ $(echo $jar_version | cut -f1 -d.) -gt "$(echo $central_version | cut -f1 -d.)" ] ; then
