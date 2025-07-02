@@ -378,6 +378,18 @@
           </configuration>
         </plugin>
         <plugin>
+          <groupId>org.sonatype.central</groupId>
+          <artifactId>central-publishing-maven-plugin</artifactId>
+          <version>0.8.0</version>
+          <extensions>true</extensions>
+          <configuration>
+             <publishingServerId>central</publishingServerId>
+             <autoPublish>true</autoPublish>
+             <ignorePublishedComponents>true</ignorePublishedComponents>
+             <deploymentName>ECF Release</deploymentName>
+          </configuration>
+        </plugin>       
+        <plugin>
           <groupId>org.eclipse.tycho</groupId>
           <artifactId>tycho-p2-repository-plugin</artifactId>
           <version>${tycho-version}</version>
