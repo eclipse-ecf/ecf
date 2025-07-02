@@ -303,9 +303,9 @@
           <artifactId>tycho-compiler-plugin</artifactId>
           <version>${tycho-version}</version>
           <configuration>
-            <compilerArgs>
+            <compilerArguments>
               <properties>${project.basedir}/.settings/org.eclipse.jdt.core.prefs</properties>
-            </compilerArgs>
+            </compilerArguments>
           </configuration>
         </plugin>
         <plugin>
