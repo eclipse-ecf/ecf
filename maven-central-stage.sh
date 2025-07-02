@@ -249,7 +249,7 @@ echo
 for b in $bundles_deploy ; do
 	jars=$(find -name "$b-*-SNAPSHOT.jar" | tail -n1)
 	for jar in $jars ; do
-		deploy "$(dirname $jar) $b"
+		deploy "$(dirname $jar)" "$b"
 	done
 done
 
