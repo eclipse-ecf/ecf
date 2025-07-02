@@ -75,8 +75,9 @@ deploy () {
 
 	#local settings=/opt/public/hipp/homes/genie.ecf/.m2/settings-deploy-ossrh.xml
 	#local settings=~/.m2/settings.xml
-	echo "mvn --projects $2 -amd gpg:sign deploy"
-	mvn -p "$2" -amd gpg:sign deploy 
+	echo "mvn gpg:sign "
+	mvn -p "$2" gpg:sign $props
+	mvn -p "$2" deploy $props
 }
 
 bundles=""
