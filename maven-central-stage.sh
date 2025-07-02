@@ -72,13 +72,18 @@ deploy () {
 	if [ -f "$javadoc" ] ; then
 		props="$props -Djavadoc=$javadoc"
 	fi
+	
+    local projs=":ecf-parent"
+	if [ ! -z "$2" ] ; then
+	   projs="$projs,:$2"
+	fi
 
 	#local settings=/opt/public/hipp/homes/genie.ecf/.m2/settings-deploy-ossrh.xml
 	#local settings=~/.m2/settings.xml
-	echo "mvn gpg:sign $props"
-	mvn gpg:sign $props
-	echo "mvn deploy $props"
-	mvn deploy $props
+	echo "mvn --projects $projs gpg:sign $props"
+	mvn --projects "$projs" gpg:sign $props
+	echo "mvn --projects $projs deploy $props"
+	mvn --projects $projs deploy $props
 }
 
 bundles=""
@@ -244,7 +249,7 @@ for bundle in $bundles_deploy ; do
 done
 
 # Deploy parent pom
-#deploy "./target"
+deploy "./target" 
 
 # Deploy all discovered bundles
 echo
