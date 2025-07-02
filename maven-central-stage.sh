@@ -75,8 +75,8 @@ deploy () {
 
 	#local settings=/opt/public/hipp/homes/genie.ecf/.m2/settings-deploy-ossrh.xml
 	#local settings=~/.m2/settings.xml
-	echo "mvn --projects $3 gpg:sign deploy"
-	mvn --projects $3 gpg:sign deploy 
+	echo "mvn --projects $2 gpg:sign deploy"
+	mvn --projects :$2 gpg:sign deploy 
 }
 
 bundles=""
@@ -249,7 +249,7 @@ echo
 for b in $bundles_deploy ; do
 	jars=$(find -name "$b-*-SNAPSHOT.jar" | tail -n1)
 	for jar in $jars ; do
-		deploy "$(dirname $jar $b)"
+		deploy "$(dirname $jar) $b"
 	done
 done
 
