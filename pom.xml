@@ -56,13 +56,8 @@
     <url>https://github.com/eclipse/ecf/issues</url>
     <system>GitHub</system>
   </issueManagement>
-
+<!-- 
   <distributionManagement>
-    <repository>
-      <id>repo.eclipse.org</id>
-      <name>ECF Maven Repository - Releases</name>
-      <url>https://repo.eclipse.org/content/repositories/ecf-releases/</url>
-    </repository>
     <snapshotRepository>
       <id>repo.eclipse.org</id>
       <name>ECF Maven Repository - Snapshots</name>
@@ -70,7 +65,7 @@
       <uniqueVersion>true</uniqueVersion>
     </snapshotRepository>
   </distributionManagement>
-
+-->
   <properties>
     <tycho-version>4.0.10</tycho-version>
     <cbi-version>1.5.2</cbi-version>
@@ -384,7 +379,7 @@
           <extensions>true</extensions>
           <configuration>
              <publishingServerId>central</publishingServerId>
-             <autoPublish>true</autoPublish>
+             <centralSnapshotsUrl>https://central.sonatype.com/repository/maven-snapshots/</centralSnapshotsUrl>
              <ignorePublishedComponents>true</ignorePublishedComponents>
              <deploymentName>ECF Release</deploymentName>
           </configuration>
