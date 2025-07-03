@@ -76,7 +76,7 @@ deploy () {
 	#local settings=/opt/public/hipp/homes/genie.ecf/.m2/settings-deploy-ossrh.xml
 	#local settings=~/.m2/settings.xml
 	echo "mvn --projects $2 deploy"
-	mvn --projects "$projs" deploy
+	mvn --projects "$2" deploy
 }
 
 bundles=""

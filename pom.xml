@@ -72,7 +72,7 @@
   </distributionManagement>
 
   <properties>
-    <tycho-version>4.0.11</tycho-version>
+    <tycho-version>4.0.10</tycho-version>
     <cbi-version>1.5.2</cbi-version>
     <target-platform>2024-06</target-platform>
     <execution-environment>JavaSE-17</execution-environment>
@@ -303,9 +303,9 @@
           <artifactId>tycho-compiler-plugin</artifactId>
           <version>${tycho-version}</version>
           <configuration>
-            <copied.org.apache.maven.plugin.AbstractCompilerMojo.compilerArgs>
+            <compilerArguments>
               <properties>${project.basedir}/.settings/org.eclipse.jdt.core.prefs</properties>
-            </copied.org.apache.maven.plugin.AbstractCompilerMojo.compilerArgs>
+            </compilerArguments>
           </configuration>
         </plugin>
         <plugin>
