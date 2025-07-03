@@ -244,7 +244,7 @@ for bundle in $bundles_deploy ; do
 done
 
 # Deploy parent pom
-deploy "./target"
+# deploy "./target"
 
 # Deploy all discovered bundles
 echo
