@@ -1,12 +1,12 @@
 ## Eclipse Communications Framework
 ECF is a set of APIs/frameworks/types for inter-process communication
 
-Current version: 3.16.2
-Release Date: 5/28/2025
+Current version: 3.16.3
+Release Date: 7/2/2025
 
-## NEW (5/19/2025) ECF adds tooling support for Model Context Protocol (MCP)
+## NEW (7/2/2025) ECF enhances tooling support for Model Context Protocol (MCP)
 
-As part of ECF 3.16.1, there is a new bundle/jar in ECF that adds annotation classes and a few utility classes.  It's available in [ECF 3.16.1 p2 repo](https://download.eclipse.org/rt/ecf/latest/) and via [maven central](https://central.sonatype.com/artifact/org.eclipse.ecf/org.eclipse.ecf.ai.mcp.tools).
+As part of ECF 3.16.3, there is a new bundle/jar in ECF that adds annotation classes and a few utility classes.  It's available in [ECF 3.16.3 p2 repo](https://download.eclipse.org/rt/ecf/latest/) and via [maven central](https://central.sonatype.com/artifact/org.eclipse.ecf/org.eclipse.ecf.ai.mcp.tools).
 
 There is an example [here](https://github.com/ECF/Py4j-RemoteServicesProvider/blob/master/examples/org.eclipse.ecf.examples.ai.mcp.toolservice/src/org/eclipse/ecf/examples/ai/mcp/toolservice/ArithmeticTools.java) of using these annotations for two tools declared by a single service interface.
 
