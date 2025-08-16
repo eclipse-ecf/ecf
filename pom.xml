@@ -151,6 +151,9 @@
 	<!-- Model Context Protocol Tooling Support Bundle -->
     <module>framework/bundles/org.eclipse.ecf.ai.mcp.tools</module>
 
+	<!-- Model Context Protocol Transport Support Bundle -->
+    <module>framework/bundles/org.eclipse.ecf.ai.mcp.transports</module>
+
 	<!-- A2A Tooling Support Bundle -->
     <module>framework/bundles/org.eclipse.ecf.ai.a2a</module>
 
