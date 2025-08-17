@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %bundle.name
 Bundle-SymbolicName: org.eclipse.ecf.ai.mcp.transports
 Bundle-Version: 1.0.1.qualifier
+Export-Package: org.eclipse.ecf.ai.mcp.transports;version="1.0.0"
 Require-Bundle: slf4j.api
 Bundle-Vendor: %bundle.provider
 Automatic-Module-Name: org.eclipse.ecf.ai.mcp.transports
