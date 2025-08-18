@@ -10,6 +10,6 @@
   </parent>
   <groupId>org.eclipse.ecf</groupId>
   <artifactId>org.eclipse.ecf.filetransfer.httpclient4.feature</artifactId>
-  <version>3.14.33-SNAPSHOT</version>
+  <version>3.14.34-SNAPSHOT</version>
   <packaging>eclipse-feature</packaging>
 </project>
