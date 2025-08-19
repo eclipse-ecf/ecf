@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.ecf.filetransfer.httpclient5.feature"
       label="%featureName"
-      version="1.2.0.qualifier"
+      version="1.2.1.qualifier"
       provider-name="%providerName"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">
@@ -25,9 +25,11 @@
 
    <plugin
          id="org.eclipse.ecf.provider.filetransfer.httpclient5"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ecf.provider.filetransfer.httpclient5.win32"
+         os="win32"
+         version="0.0.0"/>
 
 </feature>
