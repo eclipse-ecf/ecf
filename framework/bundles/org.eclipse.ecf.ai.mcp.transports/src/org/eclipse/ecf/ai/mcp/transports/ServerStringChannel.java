@@ -83,7 +83,9 @@ public class ServerStringChannel extends AbstractStringChannel {
 		if (c != null) {
 			writeMessageToChannel(c, message);
 		} else {
-			throw new IOException("not connected");
+			if (logger.isDebugEnabled()) {
+				logger.debug("No acceptedClient attached to writeMessage={}", message);
+			}
 		}
 	}
 
