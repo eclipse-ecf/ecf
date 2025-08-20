@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %plugin.name
 Bundle-SymbolicName: org.eclipse.ecf.provider.filetransfer.httpclientjava;singleton:=true
-Bundle-Version: 2.1.0.qualifier
+Bundle-Version: 2.1.1.qualifier
 Bundle-Vendor: %plugin.provider
 Bundle-Localization: plugin
 Automatic-Module-Name: org.eclipse.ecf.provider.filetransfer.httpclientjava
@@ -23,7 +23,6 @@ Import-Package: javax.net.ssl,
  org.eclipse.osgi.service.debug;version="1.2.0",
  org.eclipse.osgi.util;version="1.1.0",
  org.osgi.framework,
- org.osgi.service.component.annotations;resolution:=optional,
  org.osgi.service.log;version="1.5.0",
  org.osgi.util.tracker;version="1.5.2"
 Bundle-ActivationPolicy: lazy
