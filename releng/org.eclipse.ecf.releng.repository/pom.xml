@@ -9,7 +9,7 @@
     <relativePath>../../</relativePath>
   </parent>
   <artifactId>org.eclipse.ecf.releng.repository</artifactId>
-  <version>3.16.4-SNAPSHOT</version>
+  <version>3.16.5-SNAPSHOT</version>
   <packaging>eclipse-repository</packaging>
 
   <name>ECF p2 Repository</name>

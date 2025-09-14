@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %bundle.name
 Bundle-SymbolicName: org.eclipse.ecf.osgi.services.remoteserviceadmin
 Automatic-Module-Name: org.eclipse.ecf.osgi.services.remoteserviceadmin
-Bundle-Version: 4.9.3.qualifier
+Bundle-Version: 4.9.400.qualifier
 Bundle-Activator: org.eclipse.ecf.internal.osgi.services.remoteserviceadmin.Activator
 Bundle-Vendor: %bundle.provider
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

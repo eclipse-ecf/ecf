@@ -69,10 +69,6 @@ public abstract class AbstractTopologyManager {
 			this.reg = reg;
 		}
 		
-		void unadvertise() {
-			unadvertiseEndpointDescription(this.ed);
-		}
-
 		public void unregister() {
 			try {
 				this.reg.unregister();
@@ -115,10 +111,14 @@ public abstract class AbstractTopologyManager {
 	public void close() {
 		registrationLock.lock();
 		try {
-			registrations.entrySet().stream().forEach(entry -> {
-				entry.getValue().forEach(h -> h.unadvertise());
-			});
-			registrations.clear();
+			for(Iterator<List<EndpointRegistrationHolder>> i = registrations.values().iterator(); i.hasNext(); ) {
+				for(Iterator<EndpointRegistrationHolder> j = i.next().iterator(); i.hasNext(); ) {
+					// call unregister
+					j.next().unregister();
+					j.remove();
+				}
+				i.remove();
+			}
 		} finally {
 			registrationLock.unlock();
 		}
