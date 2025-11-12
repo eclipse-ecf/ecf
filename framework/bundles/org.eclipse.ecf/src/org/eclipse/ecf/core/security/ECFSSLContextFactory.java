@@ -12,6 +12,7 @@
 package org.eclipse.ecf.core.security;
 
 import java.security.*;
+import java.util.Objects;
 import java.util.Optional;
 import javax.net.ssl.SSLContext;
 import org.eclipse.core.runtime.IStatus;
@@ -58,8 +59,9 @@ public class ECFSSLContextFactory implements SSLContextFactory {
 	}
 
 	protected SSLContext getInstance0(String protocol, String providerName) throws NoSuchAlgorithmException, NoSuchProviderException {
-		if (protocol == null) {
-			return SSLContext.getDefault();
+		SSLContext defaultContext = SSLContext.getDefault();
+		if (protocol == null || Objects.equals(protocol, defaultContext.getProtocol()) && Objects.equals(providerName, defaultContext.getProvider().getName())) {
+			return defaultContext;
 		}
 		Provider provider = findProvider(providerName);
 		if (provider == null)
