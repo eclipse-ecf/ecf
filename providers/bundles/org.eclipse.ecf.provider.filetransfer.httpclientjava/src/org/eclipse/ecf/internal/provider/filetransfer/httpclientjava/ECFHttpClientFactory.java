@@ -16,6 +16,7 @@ package org.eclipse.ecf.internal.provider.filetransfer.httpclientjava;
 import java.net.Authenticator;
 import java.net.http.HttpClient;
 import java.net.http.HttpClient.Redirect;
+import java.net.http.HttpClient.Version;
 import java.net.http.HttpRequest;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
@@ -37,6 +38,8 @@ import org.osgi.service.component.annotations.Component;
 @SuppressWarnings({ "restriction" })
 @Component
 public class ECFHttpClientFactory implements IHttpClientFactory {
+	private static final Runtime.Version JDK_BUG_8335181_JAVA21 = Runtime.Version.parse("21.0.8");
+	private static final Runtime.Version JDK_BUG_8335181_JAVA17 = Runtime.Version.parse("17.0.17");
 	@SuppressWarnings("unused")
 	private static final List<String> DEFAULT_PREFERRED_AUTH_SCHEMES_NO_NTLM = Arrays.asList("Basic","Digest");
 	@SuppressWarnings("unused")
@@ -51,7 +54,7 @@ public class ECFHttpClientFactory implements IHttpClientFactory {
 
 	@Override
 	public HttpClient.Builder newClient() {
-		HttpClient.Builder builder = HttpClient.newBuilder().followRedirects(Redirect.NORMAL);
+		HttpClient.Builder builder = HttpClient.newBuilder().version(getDefaultHttpVersion()).followRedirects(Redirect.NORMAL);
 		String sslContextProvider = HttpClientOptions.HTTPCLIENT_SSLCONTEXT_PROVIDER;
 		String sslContextProtocol = HttpClientOptions.HTTPCLIENT_SSLCONTEXT_PROTOCOL;
 		SSLContextFactory sslContextFactory = Activator.getDefault().getSSLContextFactory();
@@ -80,6 +83,24 @@ public class ECFHttpClientFactory implements IHttpClientFactory {
 		});
 
 		return builder;
+	}
+
+	private Version getDefaultHttpVersion() {
+		// See https://bugs.openjdk.org/browse/JDK-8335181
+		// Version with this bug are prone to spurious GOAWAY
+		// So we check here if it is safe to use HTTP/2
+		var version = Runtime.version();
+		int feature = version.feature();
+		if (feature >= 25) {
+			return Version.HTTP_2;
+		}
+		if (feature == 17 && version.compareTo(JDK_BUG_8335181_JAVA17) >= 0) {
+			return Version.HTTP_2;
+		}
+		if (feature == 21 && version.compareTo(JDK_BUG_8335181_JAVA21) >= 0) {
+			return Version.HTTP_2;
+		}
+		return Version.HTTP_1_1;
 	}
 
 	@Override
