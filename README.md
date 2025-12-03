@@ -1,12 +1,12 @@
 ## Eclipse Communication Framework
 ECF is a set of APIs/frameworks/types for inter-process communication
 
-Current version: [3.16.5](https://download.eclipse.org/rt/ecf/3.16.5/)
+Current version: [3.16.7](https://download.eclipse.org/rt/ecf/3.16.7/)
 Release Date: 9/15/2025
 
 ## NEW (8/19/2025) ECF enhances tooling support for Model Context Protocol (MCP)
 
-As part of ECF 3.16.4, there is a new bundle/jar in ECF that adds unix domain sockets (uds) transport support for MCP.  It's available in [ECF 3.16.5 p2 repo](https://download.eclipse.org/rt/ecf/latest/).
+As part of ECF 3.16.4, there is a new bundle/jar in ECF that adds unix domain sockets (uds) transport support for MCP.  It's available in [ECF 3.16.7 p2 repo](https://download.eclipse.org/rt/ecf/latest/).
 
 ### Background ###
 
