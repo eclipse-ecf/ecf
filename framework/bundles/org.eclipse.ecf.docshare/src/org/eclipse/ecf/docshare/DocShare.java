@@ -16,15 +16,12 @@
 
 package org.eclipse.ecf.docshare;
 
-import org.eclipse.ecf.internal.docshare.Messages;
-
 import java.io.*;
 import java.util.Collections;
 import java.util.Map;
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
 import org.eclipse.core.runtime.*;
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.ecf.core.IContainer;
 import org.eclipse.ecf.core.identity.ID;
 import org.eclipse.ecf.core.identity.IDCreateException;
@@ -34,7 +31,9 @@ import org.eclipse.ecf.datashare.AbstractShare;
 import org.eclipse.ecf.datashare.IChannelContainerAdapter;
 import org.eclipse.ecf.datashare.events.IChannelDisconnectEvent;
 import org.eclipse.ecf.docshare.messages.*;
-import org.eclipse.ecf.internal.docshare.*;
+import org.eclipse.ecf.internal.docshare.Activator;
+import org.eclipse.ecf.internal.docshare.DocshareDebugOptions;
+import org.eclipse.ecf.internal.docshare.Messages;
 import org.eclipse.ecf.presence.IPresenceContainerAdapter;
 import org.eclipse.ecf.presence.roster.*;
 import org.eclipse.ecf.sync.*;

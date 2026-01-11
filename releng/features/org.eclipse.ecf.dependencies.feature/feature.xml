@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.ecf.dependencies.feature"
       label="ECF DependenciesFeature"
-      version="0.0.1.qualifier"
+      version="0.0.2.qualifier"
       provider-name="Eclipse.org"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">
@@ -29,6 +29,14 @@
 
    <plugin
          id="org.apache.httpcomponents.core5.httpcore5-h2"
+         version="0.0.0"/>
+
+   <plugin
+         id="jakarta.servlet-api"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.objectweb.asm"
          version="0.0.0"/>
 
 </feature>
