@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %plugin.name
 Bundle-SymbolicName: org.eclipse.ecf.identity;singleton:=true
 Automatic-Module-Name: org.eclipse.ecf.identity
-Bundle-Version: 3.10.0.qualifier
+Bundle-Version: 3.10.1.qualifier
 Bundle-Activator: org.eclipse.ecf.internal.core.identity.Activator
 Bundle-Localization: plugin
 Bundle-Vendor: %plugin.provider
