@@ -96,7 +96,7 @@
   <setupTask
       xsi:type="git:GitCloneTask"
       id="github.clone.ecf"
-      remoteURI="eclipse/ecf">
+      remoteURI="eclipse-ecf/ecf">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
       <detail
@@ -338,6 +338,10 @@
           name="com.ibm.icu.base"
           optional="true"
           max="0"/>
+      <requirement
+          name="bndtools.core"/>
+      <requirement
+          name="bndtools.main.feature.feature.group"/>
       <sourceLocator
           rootFolder="${github.clone.ecf.location}"
           locateNestedProjects="true">
@@ -427,6 +431,10 @@
             url="https://download.eclipse.org/modeling/emf/emf/builds/release/latest"/>
         <repository
             url="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/milestone/latest"/>
+        <repository
+            url="https://bndtools.org/bndtools.p2.repo/7.1.0"/>
+        <repository
+            url="https://download.eclipse.org/egit/updates-stable-nightly"/>
       </repositoryList>
       <repositoryList
           name="Old">
@@ -608,7 +616,7 @@
     <setupTask
         xsi:type="setup:EclipseIniTask"
         option="-Doomph.redirection.ecf"
-        value="=https://raw.githubusercontent.com/eclipse/ecf/master/releng/org.eclipse.ecf.releng/ECF.setup->${github.clone.ecf.location|uri}/releng/org.eclipse.ecf.releng/ECF.setup"
+        value="=https://raw.githubusercontent.com/eclipse-ecf/ecf/master/releng/org.eclipse.ecf.releng/ECF.setup->${github.clone.ecf.location|uri}/releng/org.eclipse.ecf.releng/ECF.setup"
         vm="true">
       <description>
         Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.
