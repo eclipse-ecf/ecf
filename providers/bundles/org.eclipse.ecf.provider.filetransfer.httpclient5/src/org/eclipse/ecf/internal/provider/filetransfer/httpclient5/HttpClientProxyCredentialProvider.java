@@ -21,6 +21,7 @@ import org.apache.hc.client5.http.auth.Credentials;
 import org.apache.hc.client5.http.auth.NTCredentials;
 import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
 import org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider;
+import org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider;
 import org.apache.hc.core5.http.protocol.HttpContext;
 import org.eclipse.ecf.core.util.Proxy;
 import org.eclipse.ecf.core.util.ProxyAddress;
@@ -44,6 +45,8 @@ public class HttpClientProxyCredentialProvider extends BasicCredentialsProvider 
 	private static final String OSGI_OS_WIN32 = "win32"; //$NON-NLS-1$
 
 	private static final String NTLM_DOMAIN_PROPERTY = "http.auth.ntlm.domain"; //$NON-NLS-1$
+
+	private final SystemDefaultCredentialsProvider systemCredentialsProvider = new SystemDefaultCredentialsProvider();
 
 	protected Proxy getECFProxy() {
 		return null;
@@ -110,7 +113,7 @@ public class HttpClientProxyCredentialProvider extends BasicCredentialsProvider 
 			final String proxyPassword = proxy.getPassword();
 			// If credentials present for proxy then we're done
 			if (proxyUsername != null) {
-				credentials = new UsernamePasswordCredentials(proxyUsername, proxyPassword.toCharArray());
+				credentials = new UsernamePasswordCredentials(proxyUsername, proxyPassword == null ? null : proxyPassword.toCharArray());
 			}
 		} else if ("negotiate".equalsIgnoreCase(authscope.getSchemeName())) { //$NON-NLS-1$
 			Trace.trace(Activator.PLUGIN_ID, "SPNEGO is not supported, if you can contribute support, please do so."); //$NON-NLS-1$
@@ -118,10 +121,24 @@ public class HttpClientProxyCredentialProvider extends BasicCredentialsProvider 
 			Trace.trace(Activator.PLUGIN_ID, "Unrecognized authentication scheme."); //$NON-NLS-1$
 		}
 
+		// Native proxy providers may only contribute host / port information, leaving
+		// the actual credentials to the system authenticator.
+		if (credentials == null) {
+			credentials = getSystemCredentials(authscope, httpContext);
+		}
+
 		// Put found credentials in cache for next time
 		if (credentials != null)
 			setCredentials(authscope, credentials);
 
+		return credentials;
+	}
+
+	private Credentials getSystemCredentials(AuthScope authscope, HttpContext httpContext) {
+		Credentials credentials = systemCredentialsProvider.getCredentials(authscope, httpContext);
+		if (credentials != null && "ntlm".equalsIgnoreCase(authscope.getSchemeName())) { //$NON-NLS-1$
+			return getNTLMCredentials(credentials);
+		}
 		return credentials;
 	}
 
