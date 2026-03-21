@@ -77,7 +77,7 @@
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.equinox.core.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
-      <repository location="https://download.eclipse.org/eclipse/updates/4.39-I-builds"/>
+      <repository location="https://download.eclipse.org/eclipse/updates/4.39"/>
     </location>
   </locations>
 </target>
