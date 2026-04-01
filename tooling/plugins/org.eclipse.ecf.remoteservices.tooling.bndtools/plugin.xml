@@ -8,6 +8,11 @@
             name=" ECF Remote Services"
             parentCategory="bndtools.serviceWizardCategory">
       </category>
+      <category
+            id="org.eclipse.ecf.mcp.category"
+            name=" Model Context Protocol (MCP) Services"
+            parentCategory="bndtools.serviceWizardCategory">
+      </category>
 
       <wizard
             category="bndtools.serviceWizardCategory/org.eclipse.ecf.remoteservices.category"
@@ -38,6 +43,17 @@
             icon="icons/grpc16x16.gif"
             id="org.eclipse.ecf.bndtools.grpc.ui.grpc"
             name="gRPC HealthCheck Example Service (generated api, impl, consumer)"
+            preferredPerspectives="bndtools.perspective"
+            project="true">
+      </wizard>
+      
+      <wizard
+            category="bndtools.serviceWizardCategory/org.eclipse.ecf.mcp.category"
+            finalPerspective="bndtools.perspective"
+            class="org.bndtools.core.ui.wizards.service.NewBndTemplateBasedServiceWizard:toolgroup"
+            icon="icons/grpc16x16.gif"
+            id="org.eclipse.ecf.bndtools.mcp.ui.toolgroup"
+            name="MCP ToolGroup Example Service (api, mcpserver, mcpclient)"
             preferredPerspectives="bndtools.perspective"
             project="true">
       </wizard>
