@@ -51,9 +51,9 @@
             category="bndtools.serviceWizardCategory/org.eclipse.ecf.mcp.category"
             finalPerspective="bndtools.perspective"
             class="org.bndtools.core.ui.wizards.service.NewBndTemplateBasedServiceWizard:toolgroup"
-            icon="icons/grpc16x16.gif"
+            icon="platform:/plugin/bndtools.core/icons/service.png"
             id="org.eclipse.ecf.bndtools.mcp.ui.toolgroup"
-            name="MCP ToolGroup Example Service (api, mcpserver, mcpclient)"
+            name="MCP ToolGroup Example Server and Client (toolgroup api, mcpserver, mcpclient)"
             preferredPerspectives="bndtools.perspective"
             project="true">
       </wizard>
