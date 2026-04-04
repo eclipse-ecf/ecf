@@ -50,7 +50,7 @@
       <wizard
             category="bndtools.serviceWizardCategory/org.eclipse.ecf.mcp.category"
             finalPerspective="bndtools.perspective"
-            class="org.bndtools.core.ui.wizards.service.NewBndTemplateBasedServiceWizard:toolgroup"
+            class="org.bndtools.core.ui.wizards.service.NewBndTemplateBasedServiceWizard:toolgroup;.mcpserver;.mcpclient"
             icon="platform:/plugin/bndtools.core/icons/service.png"
             id="org.eclipse.ecf.bndtools.mcp.ui.toolgroup"
             name="MCP ToolGroup Example Server and Client (toolgroup api, mcpserver, mcpclient)"
