@@ -96,10 +96,9 @@
    <feature id="org.eclipse.ecf.remoteservice.sdk.bndtools.feature.source">
       <category name="sdk.bndtools"/>
    </feature>
+   <feature id="org.eclipse.ecf.dependencies.feature"/>
    <feature id="org.eclipse.ecf.ai.mcp.tools.feature">
-      <category name="ecf.ai.mcp"/>
-   </feature>
-   <feature id="org.eclipse.ecf.dependencies.feature">
+      <category name="other"/>
    </feature>
    <category-def name="remoteservices" label="ECF Remote Services SDKs"/>
    <category-def name="other" label="Other ECF Features"/>
@@ -113,12 +112,6 @@
       <category name="remoteservices"/>
       <description>
          This SDK has tooling for development of OSGi Remote Services on Bndtools 7.1+.  This includes Eclipse views for Remote Services development (discovered endpoint descriptions, and monitoring of the RemoteServiceAdmin OSGi service implementation.   It also includes Bndtools workspace, project, and bndrun templates, and OSGi Service creation wizards.   Bndtools 7.1+ must be installed prior to successfully installing this feature.  See here for Bndtools 7.1 installation instructions:  https://bndtools.org/installation.html
-      </description>
-   </category-def>
-   <category-def name="ecf.ai.mcp" label="Model Context Protocol (MCP) Tools Support">
-      <category name="remoteservices"/>
-      <description>
-         This feature provides annotation classes and other utilities for using ECF Remote Services with MCP servers and clients.
       </description>
    </category-def>
 </site>
