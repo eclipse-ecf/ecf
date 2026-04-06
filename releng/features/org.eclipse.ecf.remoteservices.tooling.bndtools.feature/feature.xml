@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.ecf.remoteservices.tooling.bndtools.feature"
       label="ECF Remote Services Bndtools Support"
-      version="1.4.0.qualifier"
+      version="1.4.1.qualifier"
       provider-name="%providerName"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">
@@ -20,7 +20,7 @@
    </license>
 
    <requires>
-      <import feature="bndtools.main.feature" version="7.1.0" match="compatible"/>
+      <import feature="bndtools.main.feature" version="7.1.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
