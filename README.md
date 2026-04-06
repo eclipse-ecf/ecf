@@ -1,25 +1,16 @@
 ## Eclipse Communication Framework
-ECF is a set of APIs/frameworks/types for inter-process communication
+ECF is a set of modular frameworks to support inter-process communication
 
-Current version: [3.16.5](https://download.eclipse.org/rt/ecf/3.16.5/)
-Release Date: 9/15/2025
+Current version: [3.16.6](https://download.eclipse.org/rt/ecf/3.16.6/)
+Release Date: 4/7/2026
+
+## ECF Github Organization
+
+The [ECF Organization](https://github.com/ECF) has a number of discovery and remote services providers for ECF's implementation of [OSGi Remote Services](https://docs.osgi.org/specification/osgi.cmpn/8.0.0/service.remoteservices.html) and [OSGi Remote Service Admin](https://docs.osgi.org/specification/osgi.cmpn/8.0.0/service.remoteserviceadmin.html) specifications.
 
 ## NEW (8/19/2025) ECF enhances tooling support for Model Context Protocol (MCP)
 
-As part of ECF 3.16.4, there is a new bundle/jar in ECF that adds unix domain sockets (uds) transport support for MCP.  It's available in [ECF 3.16.5 p2 repo](https://download.eclipse.org/rt/ecf/3.16.5/).
-
-### Background ###
-
-The [Model Context Protocol]() is a rapidly-being-adopted client->server protocol for integrating existing code and services in LLMs, so they can be called by the LLM (e.g. [Anthropic's Claude](https://claude.ai/new)).  One integration approach is by adding Tools to MCP servers.  
-
-A tool for MCP is essentially a single method (in Java) or a function (in Python). When creating new tools for Python servers, usually a decorator defined in the Python SDK would be used. For example:
-```
-@mcp.tool(description='myfunct does some amazing stuff')
-def myfunc() {
-   pass
-}
-```
-The MCP Java SDK, however does not yet have equivalent annotation classes (e.g. @Tool, @ToolParam, @ToolAnnotation, etc).   ECF's [new bundle project](https://github.com/eclipse-ecf/ecf/tree/master/framework/bundles/org.eclipse.ecf.ai.mcp.tools), provides these annotation classes in Java.  Although this bundle has *no* external dependencies other than Java 17 (not on other ECF classes nor any other framework), it would be better if these or some annotations were part of the MCP itself, and so we are in the process of [getting annotation classes added to the MCP Java SDK itself](https://github.com/modelcontextprotocol/java-sdk/pull/235) through [this pull request](https://github.com/modelcontextprotocol/java-sdk/pull/235).  If the annotation classes are standardized and in the Java SDK itself in future MCP releases, the references in all ECF code will be updated to depend upon the sdk-provided versions.
+As part of ECF 3.16.5, there is a new bundle/jar in ECF that adds unix domain sockets (uds) transport support for MCP.  It's available in [ECF 3.16.5 p2 repo](https://download.eclipse.org/rt/ecf/3.16.5/).
 
 ## NEW (4/28/2025) Bndtools Template for Python.Java Remote Services Development
 
