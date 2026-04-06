@@ -11,7 +11,6 @@ Bundle-Vendor: %plugin.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.workbench,
  org.eclipse.swt,
- bndtools.core;bundle-version="7.1.0",
  org.eclipse.jface.text;bundle-version="3.25.100",
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
