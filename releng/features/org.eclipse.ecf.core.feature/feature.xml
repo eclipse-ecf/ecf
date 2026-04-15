@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.ecf.core.feature"
       label="ECF Core Feature"
-      version="1.7.0.qualifier"
+      version="1.7.100.qualifier"
       provider-name="Eclipse.org - ECF"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">

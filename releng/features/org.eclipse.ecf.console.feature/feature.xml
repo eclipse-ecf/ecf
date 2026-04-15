@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.ecf.console.feature"
       label="ECF Console Feature"
-      version="1.4.0.qualifier"
+      version="1.4.100.qualifier"
       provider-name="Eclipse.org - ECF"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">
@@ -21,7 +21,7 @@
    </license>
 
    <requires>
-      <import plugin="org.eclipse.ecf" version="3.10.0" match="compatible"/>
+      <import plugin="org.eclipse.ecf" version="3.10.100" match="compatible"/>
       <import plugin="org.eclipse.ecf.identity"/>
    </requires>
 
