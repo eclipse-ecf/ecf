@@ -1,8 +1,8 @@
 ## Eclipse Communication Framework
 ECF is a set of modular frameworks to support inter-process communication
 
-Current version: [3.16.7](https://download.eclipse.org/rt/ecf/3.16.7/)
-Release Date: 4/7/2026
+Current version: [3.16.8](https://download.eclipse.org/rt/ecf/3.16.8/)
+Release Date: 4/15/2026
 
 ## ECF Github Organization
 
